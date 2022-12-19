@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<!--
+Copyright 2021 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+
+
+<meta charset="utf-8">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+  <script src="https://gstatic.com/external_hosted/threejs-r104/three.js"></script>
+  <script src="https://gstatic.com/external_hosted/threejs-r104/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://gstatic.com/external_hosted/threejs-r104/examples/js/libs/tween.min.js"></script>
+  <script src="https://www.gstatic.com/external_hosted/wavesurfer/wavesurfer_min.js"></script>
+  <script src="https://gstatic.com/firebasejs/7.13.1/firebase-app.js"></script>
+  <script src="https://gstatic.com/firebasejs/7.13.1/firebase-auth.js"></script>
+  <script src="https://gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+  <script src="https://gstatic.com/firebasejs/7.13.1/firebase-storage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+  <script src="../src/require.js"></script>
+  <link rel="stylesheet" href="../src/style.css">
+</head>
+<body style="margin: auto; width: 50%;">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <div id="inst-tab">
+    <h2>Instructions</h2>
+    <p>
+    You are in a building, and are provided with a short set of instructions to navigate to a target location. <b> Please follow the instructions as closely as possible. Do NOT explore the building unnecessarily and do NOT wander back and forth unless you are lost. </b> Please read ALL of the instructions before you start moving.
+    </p>
+    <p id="url_id"></p>
+    <div id="external-inst"></div><script>$('#external-inst').load('follower_instructions.html');</script>
+    <button id="begin-button" disabled>Begin</button>
+  </div>
+  <div id="nav-tab" style="display: none;">
+    <div id="env-div" style="width: 640px; height: 480px;">
+      <div id="env-blocker" style="position: absolute; z-index: 1; width: 640px; height: 480px; background-color: rgba(0,0,0,0.5);"></div>
+      <canvas id="env-canvas" width="640px" height="480px" style="position: absolute; z-index: 0; width: 640px; height: 480px;"></canvas>
+    </div>
+    <br>
+    <p><u>TIPS:</u> <i>Hold and drag</i> mouse to rotate current view. <i>Double-click</i> to move. The <strong style="color: #bbbb00;">YELLOW</strong> square indicates the next location you would be moving towards. </p>
+    <p id="id_check"></p>
+    <h3>Instructions to be followed:</h3>
+    <p id="instruction"></p>
+
+    <h3>How easy was it to follow the instructions?</h3>
+    <div id="faithful">
+    </div>
+
+    <br>
+    <TABLE>
+    <TR>
+      <TD> Mechanical Turk Woker ID:</TD>
+      <TD><INPUT type="textbox" value="" name="user_id" title="Enter Worker ID"/><TD>
+    </TR>
+    </TABLE>
+
+    <br>
+    <p>Please close the tab ONLY after you see a green line indicating that your answer has been received.</p>
+    <p id="upload-prog-flag" style="display: none;">Submitting your annotation...</p>
+    <p id="upload-done-flag" style="display: none; color: #008000;">We have received your answer, you can now close the current tab.</p>
+    <p id="upload-error-flag" style="display: none; color: #FF0000;">Internet connection error, please submit this session again.</p>
+    <button id="submit-button" disabled>Submit</button>
+    <br>
+  </div>
+</body>
+<script type="module">
+  import * as pangea from '../src/index.js';
+  import {doGoogleLogin, uploadBlob} from '../src/firebase.js';
+
+  // Find your app config here: https://console.firebase.google.com
+  const FIREBASE_APP_CONFIG = {};
+  const FIRESTORE_COLLECTION = '';
+  const USE_FIREBASE = false;
+  const USE_GOOGLE_LOGIN = false;
+
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const instr_id = urlParams.get('id')
+
+  const json_file = "../testdata/anno_speaker-clip-t5_greedy.json";
+  const instr_key = 'generated_instr';
+
+  async function main() {
+    // Args provided by your crowdsourcing service.
+    const data = await $.getJSON(json_file);
+    const args = data[instr_id]
+
+    let user;
+    if (USE_FIREBASE) {
+      // Firebase app initialization.
+      firebase.initializeApp(FIREBASE_APP_CONFIG);
+      if (USE_GOOGLE_LOGIN) {
+        user = await doGoogleLogin();
+      }
+    } else if (USE_GOOGLE_LOGIN) {
+      console.warn('Google login can only be used with Firebase');
+    }
+
+    //document.getElementById("url_id").style.color = "#0000ff";
+    document.getElementById("url_id").innerHTML = "You will be evaluating instruction <span style='color:blue'> #" + instr_id+ "</span>. If this number does not match the number after '?id=' in the page's link, please refresh the page after clearing your browser's caches and cookies.";
+
+    document.getElementById("id_check").innerHTML = "You will be evaluating instruction <span style='color:blue'> #" + instr_id+ "</span>. If this number does not match the number after '?id=' in the page's link, please refresh the page after clearing your browser's caches and cookies.";
+
+
+    document.getElementById("instruction").style.fontWeight = 'bold';
+    document.getElementById("instruction").style.color = "#0000ff";
+    document.getElementById("instruction").innerHTML = args[instr_key];
+
+    $('#begin-button').attr('disabled', false);
+
+    // Keep track of the annotation time. Time is money!
+    // Phase 0: instruction reading.
+    // Phase 1: navigation.
+    // Phase 2: file upload.
+    const startTime = performance.now();
+    let stopTime0;
+    let stopTime1;
+    let stopTime2;
+
+    // Initialize the environment from the args.
+    const adapter = new pangea.Matterport3D('../symdata');
+    const env = await adapter.getNavigator(args.scan, $('#env-canvas')[0]);
+    env.setPanorama(args.path[0]);
+    // Initial elevation is always 0.
+    env.camera.rotation.copy(adapter.convertRotation(args.heading, 0));
+    // Fix the aspect ratio.
+    env.camera.aspect = env.canvas.width / env.canvas.height;
+    env.camera.updateProjectionMatrix();
+    // Prevent the user from seeing the poles.
+    env.controls.maxPolarAngle = Math.PI * 5 / 6;
+    env.controls.minPolarAngle = Math.PI * 1 / 6;
+    // Hyperparameters for the controls.
+    env.controls.panSpeed = 0.75;
+    env.controls.rotateSpeed = 0.75;
+
+    const snapshots = [];
+    const record = new pangea.Animation(() => {
+      env.update();
+      snapshots.push(
+        {...env.getSnapshot(), time: record.elapsedTime});
+    });
+
+    // Counters
+    const counter_a_timestamps = [];
+    var number_a = 0; /// number value
+    var min_a = 0; /// min number
+    var max_a = 30; /// max number
+        
+    // Feedback: sufficiency 
+    var sufficiency_value = 0;
+    const sufficiency_range = ['0', '1', '2', 'many'];
+
+
+    // Feedback: faithful 
+    var faithful_value = "None";
+    const faithful_range = ['Very easy, the instructions gave accurate and sufficient information for me to follow', 'I could follow most of the instructions, but some minor parts were wrong or missing', 'I couldn’t follow at least half of the instructions', 'I couldn’t follow any part of the instruction'];
+
+    const group = document.querySelector("#faithful");
+    group.innerHTML = faithful_range.map((faithful) => `<div>
+            <input type="radio" name="faithful" value="${faithful}" id="${faithful}">
+             <label for="${faithful}">${faithful}</label>
+        </div>`).join(' ');
+    
+    // add an event listener for the change event
+    const radioButtons = document.querySelectorAll('input[name="faithful"]');
+    for(const radioButton of radioButtons){
+        radioButton.addEventListener('change', showSelected);
+    }        
+    
+    function showSelected(e) {
+        //console.log(e);
+        if (this.checked) {
+            //document.querySelector('#faithful_output').innerText = `You selected ${this.value}`;
+            faithful_value = this.value;
+            console.log(faithful_value);
+
+        }
+    }
+
+    $('input[type="textbox"]').each(function(){
+
+      this.value = $(this).attr('title');
+      $(this).addClass('text-label');
+
+      $(this).focus(function(){
+        if(this.value == $(this).attr('title')) {
+          this.value = '';
+          $(this).removeClass('text-label');
+        }
+      });
+
+      $(this).blur(function(){
+        if(this.value == '') {
+          this.value = $(this).attr('title');
+          $(this).addClass('text-label');
+        }
+      });
+    });
+
+    // Phase 0 to 1.
+    $('#begin-button').on('click', () => {
+      $('#inst-tab').fadeOut().promise().done(() => {
+        // All parent divs must be visible to draw the speaker waveform.
+        $('#nav-tab').fadeIn().promise().done(() => {
+          //speaker.drawBuffer()
+          //$('#playpause-button')[0].click();
+        });
+      });
+      stopTime0 = performance.now();
+    });
+
+    $('#submit-button').attr('disabled', false);
+    $('#env-blocker').fadeOut();
+    record.start();
+
+    function wait(ms){
+       var start = new Date().getTime();
+       var end = start;
+       while(end < start + ms) {
+         end = new Date().getTime();
+      }
+    }
+
+    $('#submit-button').on('click', async () => {
+      if (confirm('Are you ready to submit?')) {
+        $('#reload-button').attr('disabled', true);
+        $('#submit-button').attr('disabled', true);
+        record.stop();
+        stopTime1 = performance.now();
+
+        //$('#upload-prog-flag').fadeIn();
+
+        // Pretend to upload something. To submit to a different datastore, add logic here.
+        if (sufficiency_value == "None") {
+          console.log("please count guesses before submission");
+          alert("Please select guesses counter before submitting");
+          $('#submit-button').attr('disabled', false);
+          return false;
+        }
+
+        if (faithful_value == "None") {
+          console.log("please rate how easy to follow the instructions before submission");
+          alert("Please rate how easy to follow the instructions before submitting");
+          $('#submit-button').attr('disabled', false);
+          return false;
+        }
+
+        var user_id = document.getElementsByName('user_id')[0].value;
+        if (user_id == "Enter Worker ID") {
+          console.log("please enter user id before submission");
+          alert("Please enter your Mechanical Turk Worker ID before submitting");
+          $('#submit-button').attr('disabled', false);
+          return false;
+        }
+
+        $('#upload-prog-flag').fadeIn();
+
+        var output_file = `${instr_id}_snapshots.jsonl`;
+        var feedback = {"id": "feedback", faithfulness: faithful_value, sufficiency: sufficiency_value, user_id: user_id};
+        var counters_timestamps = {"id": "counter", accuracy_ts: counter_a_timestamps, mistakes: number_a};
+        const outputs = snapshots.push(feedback);
+        const outputs2 = snapshots.push(counters_timestamps);
+
+        var data = pangea.getJSONLines(snapshots);
+        const response = await fetch(output_file, { method: "POST", body: data });
+        if (!response.ok) {
+          $('#upload-error-flag').fadeIn();
+        }
+        else {
+          await new Promise((resolve) => setTimeout(resolve, 1000));
+          wait(5000);
+          $('#upload-prog-flag').fadeOut().promise().done(() => {
+          $('#upload-done-flag').fadeIn();
+          });
+        }
+        
+        stopTime2 = performance.now();
+        const answer = {
+          args,
+          user,
+          startTime,
+          stopTime0,
+          stopTime1,
+          stopTime2,
+          totalTime: stopTime2 - startTime,
+        };
+
+        if (USE_FIREBASE) {
+          // Submit your answer to the database.
+          const ref = firebase.firestore().collection(FIRESTORE_COLLECTION).doc(args['path_id']);
+          if ((await ref.get()).exists && !confirm('Overwrite existing answer?')) {
+            throw new Error(`Document ${FIRESTORE_COLLECTION}/${args['path_id']} already exists`);
+          }
+          await ref.set(answer);
+        } else {
+          // Pretend to submit something. To submit to a different datastore, add logic here.
+          console.log('Submit answer', answer);
+        }
+      }
+    });
+  };
+
+  main();
+</script>

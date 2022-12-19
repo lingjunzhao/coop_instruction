@@ -1,0 +1,1831 @@
+{
+  "0": {
+    "generated_instr": "walk down the stairs and wait on the red rug .",
+    "distance": 10.03,
+    "scan": "pRbA3pwrgk9",
+    "path": [
+      "8a6b00dd0b0d4759bbfae067cc206ac3",
+      "484070b0ecd942cc882f77f5fee5ca9a",
+      "50a28bec19bd4ad5ab3c97f58554599a",
+      "cefe85eb9d1e4592a020547df6107246",
+      "cc0682e6d88a44f3bfaeb81e91a79124",
+      "d0b75539f2484b0bb8e1612e549c06d3",
+      "baf252d021004390831cffc0c4987afd"
+    ],
+    "heading": 1.567,
+    "path_id": "2655",
+    "instr_id": "2655_0",
+    "instructions": [
+      "Walk down the stairs and wait on the red rug. ",
+      "Turn left to steps leading down. Go down steps and continue following them down as they spiral left. Stop on red rug. ",
+      "Go down all the stairs and stop on the mat at the bottom on the tile floor. "
+    ],
+    "model": "speaker_ref_agent1_eval"
+  },
+  "1381": {
+    "generated_instr": "Exit the bathroom and turn left. Walk past the bed and turn left. Walk down the stairs and stop on the third step from the top.",
+    "distance": 6.1,
+    "scan": "5q7pvUzZiYa",
+    "path": [
+      "48197e3233eb443e8f25733e323b8ea4",
+      "31447d5126954b3aba54bebd9f768964",
+      "924d79eb7fdf4504a97a22e1d96b2a6a",
+      "db8d7c22a6764639ab807ec3dec69a8b",
+      "6127ee658ce64bf48765bf59bbead503"
+    ],
+    "heading": 4.535,
+    "instr_id": "5057_0",
+    "instructions": [
+      "turn around and turn right by the bedroom . go in the door immediately and go down the hall . stop .",
+      "exit the bathroom . turn left and exit the room using the door on the left . wait there .",
+      "turn around and walk into the bedroom . walk out of the bedroom into the hallway . stop just outside the bedroom ."
+    ],
+    "generated_instr_sum_log_prob": -12.337891235336514,
+    "generated_instr_avg_log_prob": -0.35251117815247185,
+    "path_id": "5057",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1382": {
+    "generated_instr": "Walk down the stairs and turn right. Walk past the couch and stop in front of the TV.",
+    "distance": 9.59,
+    "scan": "XcA2TqTSSAj",
+    "path": [
+      "60c086c5d9684e238e9a5e5b59cff42f",
+      "965c77edadf7485c9907df062d7f40b8",
+      "ee4b64b51d51492ba75339f30dbab962",
+      "ba5d70e6143e45c3a8281157ea9ed905",
+      "387707c22d4447f4b8ceff7a4ae26c46"
+    ],
+    "heading": 1.876,
+    "instr_id": "82_0",
+    "instructions": [
+      "turn left and go down the steps , at the bottom of the steps turn right , go straight on until you see the night stand on the right .",
+      "go down the stairs . when you get down the stairs , go to the right and into a bedroom . stop before reaching the bed .",
+      "walk away from the bar towards the staircase to the right of the chairs go downstairs one floor and turn towards your right proceed past the next flight of stairs to the bedroom stop in between the two pillars looking at the bed ."
+    ],
+    "generated_instr_sum_log_prob": -9.683674324915245,
+    "generated_instr_avg_log_prob": -0.27667640928329273,
+    "path_id": "82",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1383": {
+    "generated_instr": "Walk past the piano and turn right. Walk down the stairs and stop at the bottom of the stairs.",
+    "distance": 9.2,
+    "scan": "82sE5b5pLXE",
+    "path": [
+      "5ae7323b784748f7a3c2f7c93d60914a",
+      "62e1c55d62054d149d3d23431ffe4289",
+      "3a092061063d41c5b5e54e692341c62e",
+      "e580467633814488b0055f9e5475fedc",
+      "3e2bda227e78440fbcaf5ea18f128088",
+      "1226e70df8e44d6596ea46945a62f689",
+      "af2982c371134df79520b348071775a0"
+    ],
+    "heading": 0.124,
+    "instr_id": "2248_0",
+    "instructions": [
+      "walk around the brick wall toward the seating area . go right to go up the two steps then walk forward and go down the next set of stairs . stop at the bottom of the stairs next to an open room with a couch in it .",
+      "turn right at the staircase then walk up the two stone steps . walk down the stairs by the curious cabinet . stop next to the open doorway .",
+      "go down the stairs and turn right , walking past the piano and up the two steps . continue forward and walk down the 5 steps . stop when you get down the steps ."
+    ],
+    "generated_instr_sum_log_prob": -7.448810057714937,
+    "generated_instr_avg_log_prob": -0.15848532037691354,
+    "path_id": "2248",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1384": {
+    "generated_instr": "Exit the bedroom and turn right. Walk straight down the hallway and stop at the end of the hall.",
+    "distance": 10.87,
+    "scan": "7y3sRwLe3Va",
+    "path": [
+      "50df19b5012e4451870d16320747ff9b",
+      "3429ecc6a320475fada43d43848b9aae",
+      "b6c62c6714d44a7080c83ec374607bcb",
+      "b564162b2c7d4033bfe6ef3dfb959c9e",
+      "9e4c92fd7eb74504baecf55a3264716e",
+      "6376b741b50a4418b3dc3fde791c3c09",
+      "1838a8fb8e9f48cebcd079d5373cba02"
+    ],
+    "heading": 5.925,
+    "instr_id": "2176_0",
+    "instructions": [
+      "walk through the door towards the hallway . take a right and wait at the end of the hallway .",
+      "walk forward trough the doorway , then turn right . stop in the next doorway .",
+      "exit the door on the right . once in the hallway , turn right and walk all the way down the hallway and stop in the doorway straight in front of you ."
+    ],
+    "generated_instr_sum_log_prob": -9.080948196119053,
+    "generated_instr_avg_log_prob": -0.19321166374721388,
+    "path_id": "2176",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1385": {
+    "generated_instr": "Walk down the hallway and turn left. Walk into the bedroom and stop by the nightstand.",
+    "distance": 5.44,
+    "scan": "1pXnuDYAj8r",
+    "path": [
+      "55e5280eea474acfb993bf68a193bb25",
+      "463e439a4e974a00b23bfe7c684a2607",
+      "8919ba4762914e899c88536f11c7bb92",
+      "c3b8b8e1f0994859869b42fb760fce9f",
+      "138030a069484c288b3b77f8a7cbd7be"
+    ],
+    "heading": 4.921,
+    "instr_id": "5200_0",
+    "instructions": [
+      "walk forward to the end of the hall , then turn left . enter the bedroom and wait near the chair .",
+      "stand so the feather artwork is on your left and walk straight into the room with the purple zigzag walls . turn left upon entering the room and turn right in front of the sign that says \" ski \". walk towards the white chair and stop in front of the door to the bathroom .",
+      "walk towards the picture on the wall and turn left , turn right , then wait near the bathroom ."
+    ],
+    "generated_instr_sum_log_prob": -8.808138149616227,
+    "generated_instr_avg_log_prob": -0.18740719467268568,
+    "path_id": "5200",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1386": {
+    "generated_instr": "Exit the bathroom and turn left. Walk through the open door and turn right. Walk through the open door and turn left. Walk through the first doorway on the left and stop.",
+    "distance": 9.5,
+    "scan": "r47D5H71a5s",
+    "path": [
+      "6c627071aa3448a19a45b0b35ed305b7",
+      "82cb4105387a4ab5a09d82d7ff02a41c",
+      "f45d421d04e34220b2aaf9246b6dcdd1",
+      "ae2a7dc3c3e545b98e2fcb374de658d1",
+      "e6e19fd376c544b58035a32bd44ed8d4",
+      "2b67ab047ee949538c9d5d89046d985f",
+      "f41c2851f4b241fcad3f8f15378da53b"
+    ],
+    "heading": 1.934,
+    "instr_id": "3514_0",
+    "instructions": [
+      "walk down the narrow hall to the door and out the door walk into the main room turn past some pictures on the wall and through the door into a locker room and wait .",
+      "exit the bathroom , make a sharp left into another bathroom , step into the bathroom and wait .",
+      "go straight then slightly right to continue going straight . exit the room then turn left and go into the room next door . turn right and go past the wall with the holes in it . wait near the lockers ."
+    ],
+    "generated_instr_sum_log_prob": -20.504545000963972,
+    "generated_instr_avg_log_prob": -0.43626691491412706,
+    "path_id": "3514",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1387": {
+    "generated_instr": "Walk forward and turn left. Walk forward and exit the building. Walk forward and stop outside the door.",
+    "distance": 15.86,
+    "scan": "r1Q1Z4BcV1o",
+    "path": [
+      "fa1f118c0f924788aa7ea44f690a054f",
+      "ccfc7026f4c6494ca251076c85aa906c",
+      "ffd2d7780984422f8e1f8f6f79ea89af",
+      "c34505b3a744494daa6dbed3e9308119",
+      "a2e6626d7a7e4c7297e0609c92aa7945",
+      "d1de08c84e9e4f42a0acaeee738df23a",
+      "99dc41ba4676449d8fc37890a38ad9e3"
+    ],
+    "heading": 5.519,
+    "instr_id": "3901_0",
+    "instructions": [
+      "pass the stairs on the right and then pass the fireplace on the left . the pass the bar on the right and wait right outside of the double doors .",
+      "walk to the left of the stairs that go up and to the right of the fireplace . continue straight and go outside through the double doors . stop a couple of feet outside the door .",
+      "walk straight past the long white table and fireplace . once you reach the bar , continue straight through the double doors outside to the patio ."
+    ],
+    "generated_instr_sum_log_prob": -13.43590327468715,
+    "generated_instr_avg_log_prob": -0.4198719773339734,
+    "path_id": "3901",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1388": {
+    "generated_instr": "Walk through the doorway and turn left. Walk into the bedroom and turn left. Walk past the bed and stop in front of the sink.",
+    "distance": 14.2,
+    "scan": "8WUmhLawc2A",
+    "path": [
+      "5456afbdce1d49489a6d1a178b3a7840",
+      "4f278b8e757046919bbf37269dd0d017",
+      "7921c216294d43c0b7be2ca634bbf6a9",
+      "818d69716786445f8eef89a590ec3f52",
+      "92ffe9fa9ea6437c88eac23b0bafc0bc",
+      "7c9f57c094654e9a9cb27ae4a2f7fa0b",
+      "a59713eed44e47cca397462601c4d960"
+    ],
+    "heading": 1.97,
+    "instr_id": "4762_0",
+    "instructions": [
+      "with the dining table on your right and ahead of you , exit the room through the opening to your left , then continue down the hallway to your right . at the end of the hallway , turn left and continue forward . just before the end of the hallway with the pictures of a young girl and boy on the wall , take a dogleg to the left and enter the bedroom . walk past the foot of the bed and enter the bathroom to the right of the head of the bed .",
+      "turn around and walk down the hallway . turn left and go into the bedroom on the left . walk through the door in the corner to go into the bathroom .",
+      "keep walking forward , and turn left at the first corner . walk straight towards a bedroom in front of you . enter inside , and pass the bed , and turn left to enter the bathroom , and stop there ."
+    ],
+    "generated_instr_sum_log_prob": -12.7991174578639,
+    "generated_instr_avg_log_prob": -0.3199779364465975,
+    "path_id": "4762",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1389": {
+    "generated_instr": "Exit the closet and turn left. Walk through the bedroom and turn right. Walk through the bedroom and wait in the doorway.",
+    "distance": 13.57,
+    "scan": "5LpN3gDmAk7",
+    "path": [
+      "7809ee4664cd428c8831a1267d23eaff",
+      "13a8c23dab5b473fa8d449a126b949be",
+      "9231543c6c484c939a501338ad8c1db4",
+      "fd23ee9232f54604bda2e7cb0d4055d1",
+      "5f5b895c833b41afb1db0ba29afce147",
+      "ccabfad5dfcd47cd821e57a15a58d55c",
+      "f106c5744f8e444d931ed9bdd12ee3aa"
+    ],
+    "heading": 6.154,
+    "instr_id": "2473_0",
+    "instructions": [
+      "enter the bedroom and make a left , go straight through the hallway , passed the painting , go toward the red painting and then through the doorway to the left of the red painting , take a step into the doorway and stop .",
+      "turn right and exit into the bedroom . turn left and walk to the wall and then turn left . walk to the end of that area and turn right out the last door . once out the door walk across the small room and enter the door to the far left . stop once you enter the bedroom .",
+      "go straight until you see a bed then turn left and left again to go into the hallway continue down the hallway that turns slightly right and go into the door on the left . wait by the white chair ."
+    ],
+    "generated_instr_sum_log_prob": -13.153431452954578,
+    "generated_instr_avg_log_prob": -0.37581232722727365,
+    "path_id": "2473",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1390": {
+    "generated_instr": "Walk through the kitchen and turn left. Walk past the dining room table and chairs and stop by the fireplace.",
+    "distance": 10.28,
+    "scan": "1pXnuDYAj8r",
+    "path": [
+      "49b4f59afc74417d846ad8cf1634e3d8",
+      "92c89626241c4fbbb9294eb7db7f9da0",
+      "42524ad2f3f44645a1dc3bd8486560cf",
+      "7d1e000e54d942168b24155d12cd265b",
+      "20f6b7fcb5254024aacdd907da2eb315"
+    ],
+    "heading": 1.915,
+    "instr_id": "2328_0",
+    "instructions": [
+      "go straight , pass the kitchen area then turn left and pass the table with chairs . wait by the first column on your left .",
+      "head forward past the kitchen and take the first left at the dining table . wait in the hallway between the living room and dining room .",
+      "walk straight ahead through the kitchen . once you pass the desk area , turn left . walk forward and stop beside the column before you reach the front door ."
+    ],
+    "generated_instr_sum_log_prob": -10.733783313451909,
+    "generated_instr_avg_log_prob": -0.2283783683713172,
+    "path_id": "2328",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1391": {
+    "generated_instr": "Walk down the hallway and turn left. Walk into the bedroom and stop by the couch.",
+    "distance": 10.84,
+    "scan": "5LpN3gDmAk7",
+    "path": [
+      "d3ed1b6f834c4951a939a14efb6eb3f4",
+      "49888a3fad204e94a546db3b697a364b",
+      "5f5b895c833b41afb1db0ba29afce147",
+      "fd23ee9232f54604bda2e7cb0d4055d1",
+      "d28afd8227934d9e9845a151839f2501",
+      "2f2cac014c7e4877baf8c45690e5f8a4"
+    ],
+    "heading": 3.036,
+    "instr_id": "3143_0",
+    "instructions": [
+      "walk through the doorway with the red painting behind you , follow the hallway to the left , and walk straight past the bed . stop in front of the couch outside .",
+      "move forward to the doorway until you see the art on the wall . once there , change your direction and move onward towards the left . continue your forward progress through the bedroom . past the footstool on your left . continue moving forward out on the balcony and come to a complete stop behind the couch .",
+      "go through the doorway to the left of the stairs and down the hallway and into the bedroom . walk past the bed and onto the patio . stop after stepping outside ."
+    ],
+    "generated_instr_sum_log_prob": -8.772204014356419,
+    "generated_instr_avg_log_prob": -0.2829743230437554,
+    "path_id": "3143",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1392": {
+    "generated_instr": "Walk past the bed and through the doorway. Stop just inside the bathroom.",
+    "distance": 7.19,
+    "scan": "Pm6F8kyY3z2",
+    "path": [
+      "094836afff5e4fbfbb6659a96ec665b8",
+      "b8f49ffb1486488bbb72693578c17865",
+      "cb070d66db084a79b553310df69ed31d",
+      "8078fc4f547a4a9cb1a6bb036cc18dc9",
+      "87e7b6f2006541a9abe57fba18294a0c",
+      "138252ad9fab4ae1a86997fc363e6ac7"
+    ],
+    "heading": 6.017,
+    "instr_id": "7280_0",
+    "instructions": [
+      "walk past the left side of the bed and stop in the doorway .",
+      "exit the room using the door on the left . wait there in the bathroom .",
+      "go into the bathroom on the left of the bed . stop in the doorway to the bathroom ."
+    ],
+    "generated_instr_sum_log_prob": -8.44504344015192,
+    "generated_instr_avg_log_prob": -0.17968177532238128,
+    "path_id": "7280",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1393": {
+    "generated_instr": "Walk into the kitchen and past the kitchen and dining area. Walk through the living room and stop in the doorway to the patio.",
+    "distance": 13.38,
+    "scan": "sKLMLpTHeUy",
+    "path": [
+      "4747f923b8094c83a1511f986bd221b3",
+      "cfc6615be90e448a83661e393dcd0c99",
+      "2088e86b63984a319cc5953ab54c5aa3",
+      "832718b227bf4fbd95cbce24ec211e73",
+      "04b062d9c3364aa788c11de5e6ba55e5",
+      "3fd5d56160ab4601abd292235d2de9b9",
+      "2c0e745d95304653a5ec42b9e4abbadd"
+    ],
+    "heading": 5.152,
+    "instr_id": "4554_0",
+    "instructions": [
+      "walk through the kitchen . stop on the balcony , next to the first couch with black and white cushions .",
+      "walk past the table and enter the doorway to the left . walk straight through the kitchen area and stop once you reach the first couch in the outside area .",
+      "go around the table to the left and go straight through the doorway into the kitchen . continue through the kitchen and stop in front of the grey sofa with zebra pillows on it ."
+    ],
+    "generated_instr_sum_log_prob": -17.25231189059565,
+    "generated_instr_avg_log_prob": -0.539134746581114,
+    "path_id": "4554",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1394": {
+    "generated_instr": "Exit the bedroom and turn left. Walk down the hallway and enter the bedroom at the end of the hall. Stop in the doorway.",
+    "distance": 6.9,
+    "scan": "5q7pvUzZiYa",
+    "path": [
+      "4b85d61dd3a94e8a812affe78f3a322d",
+      "21fca0d6192940e580587fe317440f56",
+      "c629c7f1cf6f47a78c45a8ae9ff82247",
+      "69fad7dd177847dbabf69e8fb7c00ddf",
+      "2fdd7ac33e4e4e5ab38353ba6ab6cc7d",
+      "521886391b7849c9b1e458e8e65760de",
+      "a7843f11f41a475792035f544feafaa8"
+    ],
+    "heading": 1.262,
+    "instr_id": "1365_0",
+    "instructions": [
+      "go forward and take left and enter bedroom .",
+      "walk out of the bedroom and take a left down the hallway . walk into the bedroom ahead at the end of the hall . stop once you are in the bedroom , just past the doorway .",
+      "take a left out of the room . take a left and wait in the bedroom ."
+    ],
+    "generated_instr_sum_log_prob": -10.120454259930085,
+    "generated_instr_avg_log_prob": -0.21532881404106563,
+    "path_id": "1365",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1395": {
+    "generated_instr": "Walk straight ahead and wait outside on the balcony.",
+    "distance": 12.6,
+    "scan": "aayBHfsNo7d",
+    "path": [
+      "9a1dfb5fc5c148d2b600e7789446089d",
+      "cbcae92ea4b34638a877dda9b4bd7be6",
+      "ff0c027e9f0a4cd784e4851736c397a4",
+      "01f2afc7ba584593aa5712707d285507",
+      "24d74aa8b1e247f0a2daf2c771db21ea",
+      "cfb1d3bfd87d4e87a115ad9553e7a0df",
+      "ff7072175bd04676a040d26dbe53ec18"
+    ],
+    "heading": 4.958,
+    "instr_id": "1456_0",
+    "instructions": [
+      "leave the living room area and walk straight back past the stairs and to the back door . stand in the doorway and look outside .",
+      "go down the hallway passed the stairs and living area with the wood table . exit out into the backyard through the doorway .",
+      "go all the way to the glass double doors and stop in the doorway ."
+    ],
+    "generated_instr_sum_log_prob": -7.74724921892664,
+    "generated_instr_avg_log_prob": -0.2213499776836183,
+    "path_id": "1456",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1396": {
+    "generated_instr": "Walk past the reception desk and out the door on the right. Walk down the hallway and stop in the doorway.",
+    "distance": 15.24,
+    "scan": "ur6pFq6Qu1A",
+    "path": [
+      "975c5e19ef5044dab4de3980447432f1",
+      "55fb9841019e4ca3ad98f4ff85ea4cab",
+      "2ab7cc6ff29e4f8298446de2fb2a3f01",
+      "aaaacb5ba3d54336ab642045633dd829",
+      "de87e9646a654e1e8f4e96593a3adbc3",
+      "96b2d4806ff04e0db5a62b331f7aa96f"
+    ],
+    "heading": 1.425,
+    "instr_id": "3977_0",
+    "instructions": [
+      "walk past the desk toward the reclining chairs and turn left after passing the hollow squared wall . walk down the hall and into the second door from the right . stop just inside the door .",
+      "walk forward past the framed glass dividing wall on the left . turn left past the dividing wall and walk past the wicker hamper on the right . continue down the hallway and turn into the massage room on the right . wait near the massage tables .",
+      "turn right and then turn left after the partition . turn right into the massage room and wait there next to the phone ."
+    ],
+    "generated_instr_sum_log_prob": -14.933489714516469,
+    "generated_instr_avg_log_prob": -0.4266711347004705,
+    "path_id": "3977",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1397": {
+    "generated_instr": "Walk through the office and out of the office. Walk into the hallway and turn left. Walk into the hallway and turn left. Stop in front of the bathroom.",
+    "distance": 8.83,
+    "scan": "mJXqzFtmKg4",
+    "path": [
+      "25a7d382b0ce48958b4d6f168897eb68",
+      "b8cbc8b748d3423c83f4b2433fb372ff",
+      "8a9d216821a04687b0a1477ab1b1bf5a",
+      "e7e1ff6b2eb94439ad08cc471ec70ca3",
+      "432b3b9f281243a1bed28ff4877bc7e7",
+      "b2f2e0367c764b9b8b236ff6fe73f19c"
+    ],
+    "heading": 0.224,
+    "instr_id": "2367_0",
+    "instructions": [
+      "walk toward the fireplace . exit the room and turn left . stop in front of the double doors and tall potted plant .",
+      "exit the office and then turn left . go down the hallway to the left and wait right by the vase that is being held by metal base with the brown plant .",
+      "exit study and turn left . stop at double doors and tall planter ."
+    ],
+    "generated_instr_sum_log_prob": -16.765185442789658,
+    "generated_instr_avg_log_prob": -0.38102694188158315,
+    "path_id": "2367",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1398": {
+    "generated_instr": "Go up the stairs and stop at the third step from the top.",
+    "distance": 5.73,
+    "scan": "b8cTxDM8gDG",
+    "path": [
+      "de07fa6aafd04c698dbc2dd9cdae9948",
+      "f3914b4071b7408c843d4d45a7370be2",
+      "35364cd59b214212b111f83416fc7e36",
+      "1841abbee0e04435a3fbd7db05df30b0",
+      "3cba21a6fa2243fe8e619d49cfba77e7"
+    ],
+    "heading": 4.856,
+    "instr_id": "5741_0",
+    "instructions": [
+      "continue up the stairs to the first landing . stop and wait near the artwork .",
+      "go up the stairs then turn left and go up the stairs . wait near the marilyn monroe painting on the right wall .",
+      "turn around and go up the stairs . wait at the start of the second set of stairs by the switch on the wall ."
+    ],
+    "generated_instr_sum_log_prob": -5.404347585339849,
+    "generated_instr_avg_log_prob": -0.15440993100970998,
+    "path_id": "5741",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1399": {
+    "generated_instr": "Walk straight and turn left. Walk down the hallway and stop in the first doorway on your left.",
+    "distance": 12.45,
+    "scan": "B6ByNegPMKs",
+    "path": [
+      "4f232bec0d894e798b504ccb73b0eed8",
+      "c083ff948945461b882f657036d8a1d7",
+      "53249ef8a94c4c40bd6f09c069e54d16",
+      "260a052ae6d54a6191b6a67ebe726e20",
+      "bef531d4501042f99c218decf5e2b9bf",
+      "3ccaba3056a74ee49cc92cbceab99c47",
+      "b2420cbe2295499eaa8008d3c446a28d"
+    ],
+    "heading": 3.277,
+    "instr_id": "3938_0",
+    "instructions": [
+      "exit the office and take a left . after taking a left , stop and wait there .",
+      "exit off and walk down hall , turn left at end of hall and wait near exit sign on ceiling .",
+      "exit the office and go straight until you get to the end of the hallway then turn left and wait there by the door on the left ."
+    ],
+    "generated_instr_sum_log_prob": -10.879782506265059,
+    "generated_instr_avg_log_prob": -0.2472677842332968,
+    "path_id": "3938",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1400": {
+    "generated_instr": "Walk along the edge of the pool and enter the house through the door on the left. Stop in the doorway.",
+    "distance": 15.76,
+    "scan": "kEZ7cmS4wCh",
+    "path": [
+      "131ddd8afe144bf9a0d22bdc435f117d",
+      "c1601686ff1d4d6aa7b01a1cb4bc7e00",
+      "b1ce0ca7853d4889ad9313a89b8150ac",
+      "bb06442335d542cbb733939a78fcff36",
+      "ce55b83aa694421a89a9866dc7c6b7b6",
+      "fd22cb9d82364bbdb6ea4fdb051a7721",
+      "7bb74d11234146b19b211e4b1c319cbf"
+    ],
+    "heading": 3.968,
+    "instr_id": "5048_0",
+    "instructions": [
+      "walk into the house with the pool on your left . stop at the black strip of tile on the floor .",
+      "walk along stone path towards house . enter through large glass doors . walk to long black dining . table . wait here .",
+      "walk into the house through the middle door , into the living and dining room . stop once you enter the house ."
+    ],
+    "generated_instr_sum_log_prob": -13.425131700031073,
+    "generated_instr_avg_log_prob": -0.2856411000006611,
+    "path_id": "5048",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1401": {
+    "generated_instr": "Exit the bedroom and turn right. Walk past the living room and wait by the fireplace.",
+    "distance": 14.69,
+    "scan": "Vvot9Ly1tCj",
+    "path": [
+      "0cbacff4cbff4f9e9c35cd35c989c1ab",
+      "bf5d29d3d97a47a8aaa1a6d0e981644c",
+      "c313e18d8f404a86b7d80b2845334ff5",
+      "97e2b380b56147da8ec1044227eb11d6",
+      "59fe136fc3e141c2b9c55378d1b39f1e",
+      "ffd54f8c14fb4350b1e5ddcc7bfea136",
+      "2b620a64437e43a187c18892ac8fc0e9"
+    ],
+    "heading": 5.092,
+    "instr_id": "4964_0",
+    "instructions": [
+      "walk past the bed . straight into the hallway . go straight and slightly left until you get to a room with white couches . turn left and walk toward the round table . wait there .",
+      "exit the bedroom and enter the living room . stand by the sofa near the patio doors .",
+      "turn right and exit the bedroom and pass the door on the left . enter the living room area on the left and turn left . wait by the door and table ."
+    ],
+    "generated_instr_sum_log_prob": -11.277989091739371,
+    "generated_instr_avg_log_prob": -0.2819497272934843,
+    "path_id": "4964",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1402": {
+    "generated_instr": "Exit the bathroom and turn right. Walk past the bathtub and turn right. Wait in the bathroom.",
+    "distance": 7.03,
+    "scan": "VzqfbhrpDEA",
+    "path": [
+      "469e22bad2de4a2993da71bce2db2707",
+      "b655dd2cf3c3477abf9d8def4867f09e",
+      "b526e0affbc140ef9124275daa770f89",
+      "24360576a503468b92c6bbb1451e832f",
+      "3fa94e726f0c425aaba652db06f6f20b"
+    ],
+    "heading": 2.207,
+    "instr_id": "7126_0",
+    "instructions": [
+      "walk toward the stairs and right out of the bathroom . walk around to the other side of the tub and stop .",
+      "exit the shower . turn right after you pass the television . wait near the doorway to the gym .",
+      "turn around and exit the shower . turn right to enter the bathroom . passed the tub and sink and stop near the tub and the two doorways ."
+    ],
+    "generated_instr_sum_log_prob": -10.366043368151125,
+    "generated_instr_avg_log_prob": -0.2205541142159814,
+    "path_id": "7126",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1403": {
+    "generated_instr": "Exit the bathroom and walk through the bedroom. Walk past the bed and exit the bedroom. Walk outside and stop by the couch.",
+    "distance": 5.57,
+    "scan": "5LpN3gDmAk7",
+    "path": [
+      "c1e3263cef454a859206fd408421552a",
+      "9114a9de6a67441b801696e2ba8a1003",
+      "02a0be72ae5f4c36935b1496abeceddc",
+      "77eefcb6288a4601867939fa3986485e",
+      "d6d760a338fa40b2ac5f4071dccba708",
+      "f945162ec27343bdbddaf1dd4977e2e8"
+    ],
+    "heading": 3.914,
+    "instr_id": "5098_0",
+    "instructions": [
+      "go straight . go out side to the balcony using the large glass sliding doors and wait there .",
+      "exit bathroom through door . walk to chair on balcony . wait here .",
+      "exit the bathroom and walk onto the deck ."
+    ],
+    "generated_instr_sum_log_prob": -15.244742232782556,
+    "generated_instr_avg_log_prob": -0.34647141438142176,
+    "path_id": "5098",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1404": {
+    "generated_instr": "Walk out of the room and turn right. Walk outside and stop on the walkway near the pool.",
+    "distance": 12.92,
+    "scan": "vyrNrziPKCB",
+    "path": [
+      "e642c08656284353abdd1fe071ad1582",
+      "c9de4124b5664e17b2de92e43314390f",
+      "b2841aff8c1d4b4fae73a440cb628aa4",
+      "c5bd22ef651543849baceac1a199192b",
+      "e8b5fb3a96e140398b0bc3600c04c7e9",
+      "afbb23c155354c97a0b7064049f93ac7",
+      "61a4f840232c46019bb4849a5d1eb313"
+    ],
+    "heading": 4.783,
+    "instr_id": "3641_0",
+    "instructions": [
+      "exit the room and turn right . head down the hallway . turn at the intersection and go outside . go out onto the patio and stop in front of the pool .",
+      "exit the room and turn right , then exit the building via the double doors to your left . continue straight out the doors and stop just prior to reaching the pool .",
+      "leave the office and turn right . walk straight down the hallway and turn left when you get to the doors leading outside . walk towards the pool and stop just after passing between two bushes ."
+    ],
+    "generated_instr_sum_log_prob": -11.021216292400055,
+    "generated_instr_avg_log_prob": -0.3555231062064534,
+    "path_id": "3641",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1405": {
+    "generated_instr": "Walk up the stairs and turn right. Walk into the doorway and stop.",
+    "distance": 7.3,
+    "scan": "1LXtFkjw3qL",
+    "path": [
+      "f3d9a22621e14992b8b3fb9776f0395b",
+      "e5bfa9c293cd44e1b14953500462dd72",
+      "3264da900f47425c8c062f909db9abe0",
+      "04e0d7506a0849009fabf4c10fa74a40",
+      "a6ce5d580416478b847a83a2c537a637",
+      "e8e2d73795e54b6db89cd32745e79fb9",
+      "74d5b2290be74a1ba052b6fe2320e064"
+    ],
+    "heading": 2.737,
+    "instr_id": "1199_0",
+    "instructions": [
+      "walk all the way up the stairs until you see a tall statue .",
+      "walk up stairs on left . turn right at top of stairs , stop and next set of stairs .",
+      "walk upstairs and wait at the bottom of the steps on the right ."
+    ],
+    "generated_instr_sum_log_prob": -6.223706835415641,
+    "generated_instr_avg_log_prob": -0.13241929437054553,
+    "path_id": "1199",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1406": {
+    "generated_instr": "Exit the room and turn left. Walk down the hallway and stop in front of the two white chairs.",
+    "distance": 8.2,
+    "scan": "ur6pFq6Qu1A",
+    "path": [
+      "4a153b13a3f6424784cb8e5dabbb3a2c",
+      "28c66f311baf4ffa9cf71e45bf1ca165",
+      "5eaf782cc1e34b038bfa2d2fd383ab0a",
+      "aaaacb5ba3d54336ab642045633dd829",
+      "2ab7cc6ff29e4f8298446de2fb2a3f01"
+    ],
+    "heading": 3.185,
+    "instr_id": "5606_0",
+    "instructions": [
+      "walk out of the massage table room and into the open room ahead with a wood framed trellis on the ceiling . walk towards the wall with the paintings with dripping paint design . turn the corner and walk down the hall and into the room with lounge chairs with towels on them .",
+      "exit the room . turn left and go down the hallway until you see three lounge chairs on the left . wait there .",
+      "exit bathroom , make a left , head down hallway , and stop next to table in room ."
+    ],
+    "generated_instr_sum_log_prob": -13.30968790466467,
+    "generated_instr_avg_log_prob": -0.2831848490354185,
+    "path_id": "5606",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1407": {
+    "generated_instr": "Walk past the couch and turn right. Walk down the hallway and stop in the bedroom at the end of the hall.",
+    "distance": 7.59,
+    "scan": "XcA2TqTSSAj",
+    "path": [
+      "d66cc06a999b400eb6cec0f1a31e0ced",
+      "1e2d321dc574469288c88e5ae2afb370",
+      "fa065de5315940abb64684e68f6d686a",
+      "02253cded39e4f26a34c483d645ebcb7",
+      "ec0421cc61c64f6f8692d327d6838fd5",
+      "3510eb416b7d4d779881abc5b5cf2cec"
+    ],
+    "heading": 3.29,
+    "instr_id": "2907_0",
+    "instructions": [
+      "turn right and head past the kitchen down the long hallway ahead . enter the door straight ahead and stop facing the window with the chair underneath it .",
+      "go down the hallway where the bathroom is located and into the bedroom with the dark lacquer wooden floor .",
+      "head down the hallway past the staircases . go past the bathroom and stop just inside the bedroom ."
+    ],
+    "generated_instr_sum_log_prob": -10.083644037484461,
+    "generated_instr_avg_log_prob": -0.22917372812464684,
+    "path_id": "2907",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1408": {
+    "generated_instr": "Walk past the desk and desk and stop by the desk.",
+    "distance": 12.88,
+    "scan": "ZMojNkEp431",
+    "path": [
+      "a31805b1b6dc4947a9cf22f16850a142",
+      "96c723cbe63d489295a0cc3a99438f08",
+      "6855b783e2f34c7981b90ddb5de81bd7",
+      "d4ecb79c2639408c845166b646262ece",
+      "86958e49dad94db090a8dd520b4994a3"
+    ],
+    "heading": 3.107,
+    "instr_id": "3980_0",
+    "instructions": [
+      "turn right at the white bookshelf . wait next to the desk that is next to a set of stairs .",
+      "go into the dining area and walk past the small white bookshelves and keep going until you see some bookshelves under the stairs with a blue background .",
+      "walk straight into the large room in front of you . once in turn right and walk to the other end of the very long and narrow wood table . once you reach the end , stop facing the work area ."
+    ],
+    "generated_instr_sum_log_prob": -8.232477685378655,
+    "generated_instr_avg_log_prob": -0.26556379630253724,
+    "path_id": "3980",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1409": {
+    "generated_instr": "Walk past the fireplace and through the doorway on the right. Walk through the doorway and stop in front of the treadmill.",
+    "distance": 11.1,
+    "scan": "759xd9YjKW5",
+    "path": [
+      "6e1e523c608942daae201e0edb7cdde0",
+      "5c8f1d2de7c44d4fb95fa752c5fdce24",
+      "87449aea807942e0998e230c344f0e42",
+      "d16ee55e1e434c8abc07c79b08204bf1",
+      "d3bbb56e888d4b659563d6e135406870",
+      "f5f240dba39b4c19a1354c89c56d7a59"
+    ],
+    "heading": 5.565,
+    "instr_id": "4087_0",
+    "instructions": [
+      "walk away from couches , towards front door , turn right and turn left down the hallway before giant white doors , walk straight through doorway , turn right , turn left before you reach the dining table , walk through doorway to home gym and stop .",
+      "turn around and walk towards the kitchen . proceed through the kitchen into the room with the stationary bike and treadmill . stop in front of the stationary bike .",
+      "go across the room beyond the stairs , and down the narrow hall and through the kitchen . wait at the door to the gym ."
+    ],
+    "generated_instr_sum_log_prob": -14.922168850367882,
+    "generated_instr_avg_log_prob": -0.31749295426314644,
+    "path_id": "4087",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1410": {
+    "generated_instr": "Walk past the couch and turn right. Walk into the hallway and turn left. Walk into the first door on the left and stop.",
+    "distance": 11.1,
+    "scan": "Vvot9Ly1tCj",
+    "path": [
+      "49760331a01d4d33b496b72968035e40",
+      "ffd54f8c14fb4350b1e5ddcc7bfea136",
+      "59fe136fc3e141c2b9c55378d1b39f1e",
+      "5c2d1a16a86e4222a7239a2c9a0324c6",
+      "0413b1213d00429ba2bca2ecbbcf5deb",
+      "ff666d48400744e5b1c0b0ed48217391"
+    ],
+    "heading": 5.403,
+    "instr_id": "3692_0",
+    "instructions": [
+      "if you are looking at the round table then turn right and go past the couches and then turn right . then u turn left and go straight into that large empty room .",
+      "walk behind the long white couch , then turn right down the hallway . take a quick left , then an immediate left . wait by the door in the empty room .",
+      "walk through the living room area passed the couches and into the hallway in the corner of the room . walk through the open double doors . turn around and walk through the open door immediately next to the double doors . walk into the open bedroom with wooden floors and a chandelier ."
+    ],
+    "generated_instr_sum_log_prob": -9.817618097644399,
+    "generated_instr_avg_log_prob": -0.28050337421841137,
+    "path_id": "3692",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1411": {
+    "generated_instr": "Walk through the doorway and turn left. Walk down the hallway and stop in front of the fireplace.",
+    "distance": 14.84,
+    "scan": "VLzqgDo317F",
+    "path": [
+      "e2f7333559be465d94798c1940b2e582",
+      "248492258fd5435c8276f59f63ddf0ef",
+      "fd433ad8502149ec849c4c51bb989e4a",
+      "629b626095374e3ab7d9b7ba98f2f7ba",
+      "564526d4eff54e61b077aefcfb070cfd",
+      "bf7dedec250d405f809a7124509d7c2f",
+      "4335216422a24ad9bd6a662531d49f90"
+    ],
+    "heading": 0.644,
+    "instr_id": "3967_0",
+    "instructions": [
+      "turn left and follow the rope . at the end turn left and follow the red carpet to the end . at the end , turn right and stop in front of the white and gold table .",
+      "walk past the roped - off furniture display across from the four white columns . head down the hallway . go past the two fire extinguishers sitting on the floor to the left and then make a right turn . step over the rope and stop by the round white table .",
+      "follow the stanchions and the red carpet straight through the doors into a narrow hall that bring you to another large room . step onto the cream and rose rug and wait ."
+    ],
+    "generated_instr_sum_log_prob": -10.501309607600334,
+    "generated_instr_avg_log_prob": -0.22343211931064538,
+    "path_id": "3967",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1412": {
+    "generated_instr": "Walk through the doorway and turn left. Walk into the bedroom and turn left. Walk into the bathroom and stop.",
+    "distance": 11.1,
+    "scan": "ac26ZMwG7aT",
+    "path": [
+      "35dde286a5324af49d540f7dd0bc3b74",
+      "f1c9fe4b49c443e891b6ef6b41ec25bc",
+      "6f8be003180e485aa6312a534469785b",
+      "4bd7d1a0c683471babf8c7abab4121a3",
+      "ea60a28a151f4aa286b51f9f9819aefd",
+      "72f5856a420c45a9a790ed3f9ae17a2e"
+    ],
+    "heading": 4.468,
+    "instr_id": "5021_0",
+    "instructions": [
+      "step through the door and then take a right past the shelves , enter the nearest open door and into the bathroom , walk towards the bath tub and stop once you ' ve reached the shower .",
+      "exit the media room and take a hard left . head towards the bathroom on the left . go to the tub and turn left . wait in front of the shower .",
+      "exit the room and walk through the doorway on the left . go into the bathroom and wait by the shower ."
+    ],
+    "generated_instr_sum_log_prob": -8.530594006413907,
+    "generated_instr_avg_log_prob": -0.18150200013646609,
+    "path_id": "5021",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1413": {
+    "generated_instr": "Go down the stairs and stop at the bottom of the stairs.",
+    "distance": 9.35,
+    "scan": "29hnd4uzFmX",
+    "path": [
+      "ab0f99b210bb4556b7fc18190126480b",
+      "0836acc78091475dbba186b98e05792a",
+      "9ddd0d8326b44a038d3985d96ffbb2a1",
+      "959878d8792948b5888684622f4eca36",
+      "d375a9c7bc4748a2b36ee572d56aa9e2",
+      "b14d29bea4b547d5923b3a09323b443d",
+      "1a5d5a4463014eeaa8f2db66650f6940"
+    ],
+    "heading": 6.119,
+    "instr_id": "3437_0",
+    "instructions": [
+      "turn around and walk down the stairs to the bottom . walk into the kitchen and stand near the kitchen table .",
+      "descend the stairs . then go left passed the couch and in front of the window .",
+      "go down to the bottom of the stairs and wait near the kitchen table ."
+    ],
+    "generated_instr_sum_log_prob": -6.3377917937473,
+    "generated_instr_avg_log_prob": -0.1440407225851659,
+    "path_id": "3437",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1414": {
+    "generated_instr": "Walk through the kitchen and turn left. Walk through the bedroom and into the bathroom. Stop in front of the sink.",
+    "distance": 16.68,
+    "scan": "8WUmhLawc2A",
+    "path": [
+      "62e602fc5b85463dbd8f48ba625d05ef",
+      "f032c9ee981a4462914468785f0a4abe",
+      "01b439d39a8f412fa1837be7afb45254",
+      "818d69716786445f8eef89a590ec3f52",
+      "92ffe9fa9ea6437c88eac23b0bafc0bc",
+      "7c9f57c094654e9a9cb27ae4a2f7fa0b",
+      "a59713eed44e47cca397462601c4d960"
+    ],
+    "heading": 3.139,
+    "instr_id": "5996_0",
+    "instructions": [
+      "walk forward make a right around the kitchen island . continue past living area , enter bedroom , then make a left and enter bedroom bathroom .",
+      "turn right and go through the kitchen . walk past the couches on the right and into the hallway on the left . go straight until you get to a room that is to the left of the pictures of children on the wall . turn left and go into the bathroom . wait near the sink .",
+      "pass through the living room archway and turn right , go through the center doorway , then into the bathroom . stop and wait near the sink ."
+    ],
+    "generated_instr_sum_log_prob": -10.759139906331399,
+    "generated_instr_avg_log_prob": -0.30740399732375423,
+    "path_id": "5996",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1415": {
+    "generated_instr": "Walk up the stairs and turn left. Walk up the stairs and stop in the doorway.",
+    "distance": 11.42,
+    "scan": "cV4RVeZvu5T",
+    "path": [
+      "05d8dd39b5de44b58287a6de59cdba37",
+      "5125c4a0a99f45788e694d5a73ba99c7",
+      "20f70ab4efec496c86529075648caef2",
+      "1b321779a4374c2b952c51820daa9e6c",
+      "d70997cce0464616a65afcf28d32b41e",
+      "5f8485232eeb4d74af9fdf2894ba058c",
+      "7fb6b56858c14239a79f65ef01e8691b"
+    ],
+    "heading": 3.08,
+    "instr_id": "4616_0",
+    "instructions": [
+      "head upstairs and wait in the doorway near the bedroom .",
+      "walk past the bottle of champagne on the the table to the left . make a right opposite the back of the black leather chair . walk up stairs . wait at the arched doorway at the top of the stair landing .",
+      "turn around and enter the house . once inside , turn right and enter the door to the left . turn left and go up to the top of the stairs . at the stop of the stairs , turn left and stop right in front of the door to the bedroom ."
+    ],
+    "generated_instr_sum_log_prob": -7.906853448250544,
+    "generated_instr_avg_log_prob": -0.2259100985214441,
+    "path_id": "4616",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1416": {
+    "generated_instr": "Exit the bedroom and turn right. Walk down the hallway and enter the first door on the right. Wait in the doorway.",
+    "distance": 8.77,
+    "scan": "p5wJjkQkbXX",
+    "path": [
+      "eec88eb9fe534ed79ef172a3e115f54a",
+      "f86f17660af34b46b5a55eca66f1dc6b",
+      "e165b44c56394d7b8322a813cd82d490",
+      "6fa724aeeedd448baaef3410230af97c",
+      "ba4dee4c0dd9410480e5ddeb625cdc88"
+    ],
+    "heading": 5.35,
+    "instr_id": "3590_0",
+    "instructions": [
+      "exit the bedroom . walk past the painting on the right . make a right , and walk past the vent in the ceiling . make a right through the open door . wait in the door ' s threshold .",
+      "leave the bedroom and take a right . take a right into the bedroom first on the right . stop nesxt to the door .",
+      "go out of the bedroom and take a right past the painting to the little hallway . go into the first room on your right ."
+    ],
+    "generated_instr_sum_log_prob": -10.289114559167572,
+    "generated_instr_avg_log_prob": -0.32153482997398664,
+    "path_id": "3590",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1417": {
+    "generated_instr": "Walk out of the bedroom and turn left. Walk into the bedroom and turn left. Walk outside and stop by the red statue.",
+    "distance": 16.73,
+    "scan": "Uxmj2M2itWa",
+    "path": [
+      "960977315a044216b593b236d429d0e3",
+      "0e31d2cf016445c5b4adf1aceeed25c4",
+      "c0d5fe43f0b143df80de8b5f78858474",
+      "37cb64e0cddc4f20b309abc4ff5344c2",
+      "4890b24fbb59414892ca854895896126",
+      "d52aaea9fc6e4d5fbecd0220eb9da436",
+      "13c191f506114c73b70830b89e195aa6"
+    ],
+    "heading": 2.838,
+    "instr_id": "6700_0",
+    "instructions": [
+      "after you leave the office go to the bedroom on the right and across the room to leave . once you leave the bedroom go to the end of the hall and make a left , walk thru the outside door and wait .",
+      "turn slightly to the left and walk through the door towards a purple chair . past the chair turn slightly to the left and walk past the bed towards a glass door . walk through the door and turn to the left to face a red abstract sculpture . walk to the red sculpture .",
+      "walk forward and to the left of the partition . walk straight towards the wall of windows and turn left head straight past the bed and turn left at the closet . walk through the doorway and take a hard left . walk forward and wait at the doorway by the red sculpture ."
+    ],
+    "generated_instr_sum_log_prob": -13.255234861077113,
+    "generated_instr_avg_log_prob": -0.4142260894086598,
+    "path_id": "6700",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1418": {
+    "generated_instr": "Walk down the stairs and stop at the bottom of the stairs.",
+    "distance": 9.44,
+    "scan": "b8cTxDM8gDG",
+    "path": [
+      "35364cd59b214212b111f83416fc7e36",
+      "f3914b4071b7408c843d4d45a7370be2",
+      "de07fa6aafd04c698dbc2dd9cdae9948",
+      "6268c4082bdf4f029898a13ca335a8a1",
+      "3187b9296abe47c68fc0e8bab7edfb36",
+      "357424fc423a4e978fa88a8e4d3bed78"
+    ],
+    "heading": 5.736,
+    "instr_id": "3988_0",
+    "instructions": [
+      "continue going down the spiral stairs until you reach the bottom .",
+      "go downstairs and wait at the bottom of the stairs .",
+      "walk down the stairs . stop at the bottom of the stairs , next to the door that goes outside ."
+    ],
+    "generated_instr_sum_log_prob": -4.4938799948435815,
+    "generated_instr_avg_log_prob": -0.10213363624644503,
+    "path_id": "3988",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1419": {
+    "generated_instr": "Walk up the steps and turn left. Walk into the kitchen and turn left. Walk left past the refrigerator and stop.",
+    "distance": 12.01,
+    "scan": "e9zR4mvMWw7",
+    "path": [
+      "979426d6a1ea42e29cf5c3bd62eba342",
+      "d08f0e14da3b4d1bbc760d73b3c3ebea",
+      "cd47116ee6264bc691811409bf779f34",
+      "18653fa3d6ba4f82889237201ee07d11",
+      "1d316dfbe35f41dd9203eaf88be5aae8",
+      "2224be23a70a475ea6daa55d4c90a91b"
+    ],
+    "heading": 1.556,
+    "instr_id": "5853_0",
+    "instructions": [
+      "go into the house from the garage . go through the first door on the right into the dining room . go to the induction stove .",
+      "go up the stairs and leave the garage . standing in front of the front door , go through the door on the right into the dining area . walk past the dining table and into the kitchen area . stop when you are standing on the tile floor of the kitchen .",
+      "exit the garage up the small set of stairs and enter the house . then turn right and walk through the dinning room and enter the kitchen . wait near the counter top ."
+    ],
+    "generated_instr_sum_log_prob": -11.28443296829964,
+    "generated_instr_avg_log_prob": -0.25646438564317364,
+    "path_id": "5853",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1420": {
+    "generated_instr": "Walk up the steps and turn right. Walk up the steps and turn right. Walk into the house and turn right. Walk into the laundry room and stop in the doorway.",
+    "distance": 13.2,
+    "scan": "jh4fc5c5qoQ",
+    "path": [
+      "04135640920a4ba2b7dc68c679c43903",
+      "aec90a1137d245ed84d8c1b3e809a1d8",
+      "7980b9f903164d48aaee2dbeb5615796",
+      "c9ac0c98d16a4105a3214989cac149c0",
+      "48a2541fc50b4a57a609698e2375e9b1",
+      "ba19aada2e9a47839c0355085f70f7c5",
+      "9a2945c3ffdf4dc6aa8ff34e0ad42c0b"
+    ],
+    "heading": 1.599,
+    "instr_id": "6100_0",
+    "instructions": [
+      "walk past the round wooden table towards the small three stair staircase . walk up those three stairs and continue forward to the door on the right past the blue rocking chairs . walk through that doorway and take a few steps into the room . when you reach the edge of the yellow couch turn right and walk forward until you are standing on the first multicolored mat on the floor . stop on this mat , in front of the washer and dryer .",
+      "walk up the stairs to the porch , enter the home and promptly turn right . then wait in the hallway on the rug , next to the washer and dryer .",
+      "go to the right of the table and chairs , and go up the steps . walk passed the chairs , and into the door on the right . take the first right turn , and stop by the washer and dryer ."
+    ],
+    "generated_instr_sum_log_prob": -16.24070558178947,
+    "generated_instr_avg_log_prob": -0.36910694504066976,
+    "path_id": "6100",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1421": {
+    "generated_instr": "Walk along the path with the pool on your left. Stop at the last pillar.",
+    "distance": 7.99,
+    "scan": "kEZ7cmS4wCh",
+    "path": [
+      "634ddf341f6443118bea4195d06c6555",
+      "1ce731acccb04ec0af8f7992ae21524f",
+      "fd22cb9d82364bbdb6ea4fdb051a7721",
+      "d12a35cb161641318a92f9e5dd8915db",
+      "09c10c580a0e4b4cb4f6f9445c4509e0"
+    ],
+    "heading": 4.953,
+    "instr_id": "6317_0",
+    "instructions": [
+      "go towards the pool and stay on the right of it , when you get near the last glass wall stop .",
+      "walk straight toward the pool . walk straight until you get to the steps to go into the pool .",
+      "walk on the sidewalk towards the pool , and stop once you reach the first sidewalk on the left ."
+    ],
+    "generated_instr_sum_log_prob": -9.953233203734442,
+    "generated_instr_avg_log_prob": -0.3210720388301433,
+    "path_id": "6317",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1422": {
+    "generated_instr": "Walk straight and pass the kitchen and then turn left and wait at the bottom of the stairs.",
+    "distance": 6.0,
+    "scan": "i5noydFURQK",
+    "path": [
+      "27e1974cf8af461e90d0f5124a665654",
+      "b2157583eedf426383de6e6e9753a4da",
+      "d20808518c8d4844bb76a2e0a7b98ba4",
+      "fdf3a24fdd1c41b092aa9e5ede5946d1",
+      "6e136e11116740a6a49af82502f51cee"
+    ],
+    "heading": 2.921,
+    "instr_id": "2956_0",
+    "instructions": [
+      "walk past the yellow chairs at the island , turn left towards the stairs , stop at the base of the stairs .",
+      "walk past the bar and turn left then go stand a the bottom of the stairs .",
+      "walk across kitchen to the stairs . stop at bottom of stairs ."
+    ],
+    "generated_instr_sum_log_prob": -10.735458678275222,
+    "generated_instr_avg_log_prob": -0.24398769723352778,
+    "path_id": "2956",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1423": {
+    "generated_instr": "Walk forward and turn left. Walk forward and stop at the top of the stairs.",
+    "distance": 15.17,
+    "scan": "dhjEzFoUFzH",
+    "path": [
+      "7bbd5703c15e422f96bf5a2e480f9a4c",
+      "61f10c7c3d4840a9b4b80fb16e500340",
+      "d3e9b9358c2540b0ae9a4fa1e2df4a9e",
+      "68f81fb947694c7ebc1bfcd2ae122968",
+      "9aa11635b22c4c1d81c1422bc8478b33",
+      "be3761f1bb7e4a0880af96366017efa8",
+      "2e22f95fc65047f5b58ae201de78d4f4"
+    ],
+    "heading": 5.271,
+    "instr_id": "355_0",
+    "instructions": [
+      "go towards the back of the church , between the long pew on the left and rows of pews on the right go towards the pack exit . stop to the left of the of the wall which is to the left of the exit , with a brass handrail .",
+      "go left down the hall . continue to the stairs .",
+      "walk past fan . walk past baptismal font . wait at in - ground baptismal pond ."
+    ],
+    "generated_instr_sum_log_prob": -8.80655414960384,
+    "generated_instr_avg_log_prob": -0.20014895794554183,
+    "path_id": "355",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1424": {
+    "generated_instr": "Exit the bathroom and turn right. Walk through the bedroom and exit through the door on the right. Walk straight and wait at the top of the stairs.",
+    "distance": 13.66,
+    "scan": "2n8kARJN3HM",
+    "path": [
+      "ffacc18a27644508a6e4223823a0e2a4",
+      "3f0be3965cde46ad87538ca4f3e1d271",
+      "69d83243a72046d2bf1f772be52d649a",
+      "c1a600332bb245b19d8174c0790d6fd6",
+      "3d6c224493aa4b8fa5fd16e7ae8e2d66",
+      "4460e0586719490095d7ac389f302500",
+      "a62a0607fae3496d9018dc74a561be64"
+    ],
+    "heading": 2.971,
+    "instr_id": "5231_0",
+    "instructions": [
+      "walk out of the bathroom and turn right . walk around the bed and turn left outside the bedroom . walk right through the entryway and walk to the top of the stairs and stop .",
+      "cross through the bedroom into the hallway and make a left , then head through the archway to the stair landing . stop and wait near the door .",
+      "turn all the way around and walk through the door into the bedroom . walk to the right around the bed and exit through the door . turn left slightly and walk towards the double doors leading outside . stop a couple of from the doors ."
+    ],
+    "generated_instr_sum_log_prob": -14.259449255194454,
+    "generated_instr_avg_log_prob": -0.35648623137986135,
+    "path_id": "5231",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1425": {
+    "generated_instr": "Walk forward and turn left. Walk forward and turn right into the bedroom. Walk past the bed and turn left. Walk into the closet and stop.",
+    "distance": 11.75,
+    "scan": "5LpN3gDmAk7",
+    "path": [
+      "20216703be7341b89b57ea2165e6a9bb",
+      "ccabfad5dfcd47cd821e57a15a58d55c",
+      "5f5b895c833b41afb1db0ba29afce147",
+      "fd23ee9232f54604bda2e7cb0d4055d1",
+      "9231543c6c484c939a501338ad8c1db4",
+      "13a8c23dab5b473fa8d449a126b949be"
+    ],
+    "heading": 2.93,
+    "instr_id": "4024_0",
+    "instructions": [
+      "walk forward and towards the left side of the staircase . enter the door and keep walking until you reach the bedroom . turn right and enter the door to the right side of the bed . stop in the doorway .",
+      "walk past the stairs and down the hall to the bedroom . wait in the doorway , next to the bed .",
+      "go straight and into the bedroom to the left of the stairs . stop in the large doorway to the right of the bed ."
+    ],
+    "generated_instr_sum_log_prob": -14.42791926185619,
+    "generated_instr_avg_log_prob": -0.327907255951277,
+    "path_id": "4024",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1426": {
+    "generated_instr": "Walk past the couch and up the stairs. Stop on the third step from the top.",
+    "distance": 10.02,
+    "scan": "kEZ7cmS4wCh",
+    "path": [
+      "454f883454684daf86530a34b6d007f4",
+      "100294ee82214ab39ad802149f4f1909",
+      "bc28e77e30a94f76aee87ac07949ecc4",
+      "ee34e33014c94bf79cda5892e2ec6b24",
+      "976a7a79035a4583a10624453174d94e"
+    ],
+    "heading": 6.127,
+    "instr_id": "185_0",
+    "instructions": [
+      "move forward past the white coach and then turn left . continue up the stairs and stop .",
+      "walk straight into the living room passing the chair and the couch and taking a left behind the couch and past the dining room table and up the stairs into the entry way stopping on the third tile from the left at the top step .",
+      "walk between the couch and the window . turn left and walk towards the stairway . go up the three steps and when you get to the top , wait ."
+    ],
+    "generated_instr_sum_log_prob": -7.003647935053266,
+    "generated_instr_avg_log_prob": -0.14901378585219716,
+    "path_id": "185",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1427": {
+    "generated_instr": "Walk through the bedroom and out of the bedroom. Walk through the open double doors and into the hallway. Walk through the open doors and into the next room with a large wooden floor and glass panes.",
+    "distance": 9.27,
+    "scan": "JeFG25nYj2p",
+    "path": [
+      "21947bd34d904610867e83c1e9a962fb",
+      "d907086855c9497dacdb77503099ba10",
+      "fbe8732f87f94c35a49be695f2a556de",
+      "52ca4f1175c846b0ab281ed9135b1040",
+      "0965af34fada440a89bfb3700aa800c1",
+      "cffa1c807d2c4a708aa1e5f42aeba106"
+    ],
+    "heading": 1.639,
+    "instr_id": "4919_0",
+    "instructions": [
+      "stand with the bed behind you and exit the room through the door on the right by the white flowers . walk over the black square floor decoration and over the red carpet and stop in the doorway to the left of the two chairs .",
+      "walk out the door to your left . once out the door , walk across the room and stop in the doorway of the double doors on your left .",
+      "exit the bedroom and walk into the living room . walk past the sofa and stand near the double doors ."
+    ],
+    "generated_instr_sum_log_prob": -28.760263637355408,
+    "generated_instr_avg_log_prob": -0.6119205029224555,
+    "path_id": "4919",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1428": {
+    "generated_instr": "Walk past the desk and to the right. Walk past the desk and stop by the white shelf.",
+    "distance": 13.59,
+    "scan": "ZMojNkEp431",
+    "path": [
+      "1f701e524a6d48abbfdf40cd288cf1dd",
+      "e48486bb391449b2becb28faf44e515a",
+      "77b24e884d9f47599994c1ade95f0b89",
+      "60e9c84ab617491594f5c2950cc6f3ee",
+      "334f156071b34579ae4772f623b03429",
+      "6944cb3d349a424899b2ed5b4c972763"
+    ],
+    "heading": 1.879,
+    "instr_id": "3257_0",
+    "instructions": [
+      "go straight then turn right and pass the many desks until you get to the ping pong table . wait there .",
+      "exit the nook and turn right , then walk straight between the two rows of tables until you come even with a ping pong table with four chairs under it .",
+      "turn right and walk around the desk out into the room . then turn right and walk forward stop by the ping pong table ."
+    ],
+    "generated_instr_sum_log_prob": -10.851559646893662,
+    "generated_instr_avg_log_prob": -0.23088424780624814,
+    "path_id": "3257",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1429": {
+    "generated_instr": "Walk down the stairs and turn right. Walk down the hallway and turn right. Walk into the bathroom and stop in front of the sink.",
+    "distance": 9.91,
+    "scan": "EDJbREhghzL",
+    "path": [
+      "e94cd6b986b5456990723fa8d9612759",
+      "4069c437611e44c69edf8175de76b201",
+      "e1ac54fab83242b889a95320811c68e5",
+      "95a4b136cb854ea585cb23d67e174cb3",
+      "badf87714efc482f936c14de653318e5",
+      "675491e4cc5a459db65fba26b03e6369"
+    ],
+    "heading": 6.134,
+    "instr_id": "6114_0",
+    "instructions": [
+      "go to the right of the picture of the mountain and then down the hallway , go straight down the hallway , go into the first doorway passed the black chairs to the right , take a couple steps in and stop .",
+      "walk down the stairs and turn right . walk down the hallway past the chairs and fireplace . turn right and walk into the bathroom and stop .",
+      "go down the stairs , and take a right . go down the hall and past the sitting area . enter the bathroom on the right and stop in front of the sink ."
+    ],
+    "generated_instr_sum_log_prob": -7.330972557189199,
+    "generated_instr_avg_log_prob": -0.1559781395146638,
+    "path_id": "6114",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1430": {
+    "generated_instr": "Walk through the open door and into the room with the large open room with a large round tables. Walk to the left of the stairwell and walk towards the open door near the stairwell.",
+    "distance": 13.98,
+    "scan": "E9uDoFAP3SH",
+    "path": [
+      "3d11e46400a14c6cbc0ae42a5057ae97",
+      "36ba7aeeb72e40d69e3e1c775e4bf541",
+      "611214ad029a4d4da4b45ebb8a257b3d",
+      "6acea2b64c694b948f50da07d88ed31e",
+      "099839b0911a409787e237301c90e418"
+    ],
+    "heading": 2.008,
+    "instr_id": "5350_0",
+    "instructions": [
+      "walk straight into main lobby , stop in archway on the right .",
+      "go straight until you get to the round table then turn slightly right and walk toward the stairs . after you pass the stairs wait there .",
+      "exit current room and walk past staircase and wait by first door next to the left stair case ."
+    ],
+    "generated_instr_sum_log_prob": -31.363182726549,
+    "generated_instr_avg_log_prob": -0.7127996074215681,
+    "path_id": "5350",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1431": {
+    "generated_instr": "Walk down the hallway and turn right. Walk into the bedroom and stop by the bathroom sink.",
+    "distance": 15.69,
+    "scan": "JF19kD82Mey",
+    "path": [
+      "0672a86275c14b148e8618ecde714e06",
+      "837b0a58fa8b4820a3c07e0c89ccfc60",
+      "b5b07238f2f94494b5d16390855584cb",
+      "1c2209fa44fc48c7b7ce7981bafc4ccf",
+      "595ef74c51bb4448ae709297121d4c10",
+      "e4a543521c44412e8f264d083ac5fc0c",
+      "e3cf525579a04ab4b6a5cf3ea40f58f9"
+    ],
+    "heading": 1.155,
+    "instr_id": "5628_0",
+    "instructions": [
+      "go forward , take a right at the doorway of the laundry room , go forward to the bedroom and wait in the doorway .",
+      "walk down the hallway . turn right into the last room on the right . stop in the doorway .",
+      "walk down the hallway and past the stairs . walk down the hall and turn right . stop in front of the bathroom ."
+    ],
+    "generated_instr_sum_log_prob": -9.325633692148017,
+    "generated_instr_avg_log_prob": -0.2119462202760913,
+    "path_id": "5628",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1432": {
+    "generated_instr": "Walk into the house and take a right. Walk down the stairs and take a right. Walk down the stairs and stop in the entryway.",
+    "distance": 12.22,
+    "scan": "uNb9QFRL6hY",
+    "path": [
+      "45a4210a4c224ae5be8b8ce77e6c90a7",
+      "7b1cfeb261774b58b68a0ad935b92649",
+      "20bf170c987d452cbc7b0721e9346062",
+      "59f55bea818d434f8f79ed617800d619",
+      "15a194390fdd47f9a0afd6753a0ba588",
+      "6a99c723d40b429e96a29c8ce7532d1d"
+    ],
+    "heading": 0.102,
+    "instr_id": "6644_0",
+    "instructions": [
+      "turn around 180 degrees and walk through the open , arched doorway . once inside turn 45 degrees to your right and go down the hallway there . pass through the doorway , walk into the middle of the room and stop .",
+      "go through the doorway to the house , and go through the entryway to the right . stop in the hallway by the plant .",
+      "turn around , go straight through the doorway , take your first right , do through the next hallway that is on the left diagonal to you , follow it around , and stop at the french doors ."
+    ],
+    "generated_instr_sum_log_prob": -14.180520992901663,
+    "generated_instr_avg_log_prob": -0.40515774265433324,
+    "path_id": "6644",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1433": {
+    "generated_instr": "Walk down the hallway and wait on the stairs.",
+    "distance": 9.49,
+    "scan": "aayBHfsNo7d",
+    "path": [
+      "696ce593a39d47ef9acf6902ee134861",
+      "5fdff4b578f24ff98a213299f3d91576",
+      "f15cd6746d1f4b7a804ede38d47cfa03",
+      "b1a1885860a54b8cb99c6f4ac19999a5",
+      "88ffbea957e34cd09d0ce2d3290e9694",
+      "ff3ed1ef732845839881115ed38d331f"
+    ],
+    "heading": 4.708,
+    "instr_id": "4041_0",
+    "instructions": [
+      "walk down hallway towards staircase . go down a few steps . wait here .",
+      "go straight until you get to the stairs on the left . go down three steps then stop of the fourth .",
+      "go straight down the hallway and go down the stairs . stop on the third step from the top ."
+    ],
+    "generated_instr_sum_log_prob": -5.457126577763631,
+    "generated_instr_avg_log_prob": -0.11610907612263045,
+    "path_id": "4041",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1434": {
+    "generated_instr": "Walk through the kitchen and out of the kitchen. Walk up the stairs and stop on the mat on the porch.",
+    "distance": 12.16,
+    "scan": "jh4fc5c5qoQ",
+    "path": [
+      "77f0b306ce7d4055a9c123a52019d6f0",
+      "3182b6eba9ce405f9e1c0af86cc6b862",
+      "39791f422b0244aa84b3d41d9b218f7e",
+      "9096013c3596463b9c0500520d12fef1",
+      "e4b0794b87994a7699ad7f6ee501d404",
+      "373c50dfa27649188f8e5b66c28f10a7"
+    ],
+    "heading": 3.447,
+    "instr_id": "1188_0",
+    "instructions": [
+      "walk past stove . make right through open black door . walk past outdoor dining room . walk up stairs . wait at black rocking chair .",
+      "walk towards the cabinets and take a left . walk through the doorway and take a right . walk through another doorway . walk up the stairs and wait by the rocking chair .",
+      "walk out the black door . take a right out of the next doorway . walk straight to the small flight of stairs , to the top ."
+    ],
+    "generated_instr_sum_log_prob": -12.27309128746866,
+    "generated_instr_avg_log_prob": -0.39590617056350513,
+    "path_id": "1188",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1435": {
+    "generated_instr": "Walk past the dining room table and chairs and turn left. Walk into the hallway and turn left. Stop in front of the sink.",
+    "distance": 9.35,
+    "scan": "VzqfbhrpDEA",
+    "path": [
+      "0ff26224c3f04c3a924aa1982fa13976",
+      "17a99656493c47abbb5ceb214af3e8ea",
+      "51d93d4c184f4197bd84f9b082b54e2b",
+      "8630d0d97d4c4767b37488dfbe97f51b",
+      "dfb1f5674ff1434f8e101bcd9d3cfb20"
+    ],
+    "heading": 1.791,
+    "instr_id": "6516_0",
+    "instructions": [
+      "walk forward toward the dining chair . then turn left and walk toward the brown door . turn right and continue walking past the stairs and into the doorway . turn left into the doorway to the left . keep walking and stop in front of the doorway on your right .",
+      "walk past the dining table and past the stairs into the doorway just past the stairs . when you see the window with curtains , turn left and walk a few steps until you are in front of some cabinets . stop in front of the sink on the marble counter in between the cabinets displaying glassware .",
+      "go through the room opposite the wine cases , and to the left of the room division into the small archway passed the stairs on the left , make a left into the archway and a few steps into the hallway and stop ."
+    ],
+    "generated_instr_sum_log_prob": -10.020748097064185,
+    "generated_instr_avg_log_prob": -0.21320740632051458,
+    "path_id": "6516",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1436": {
+    "generated_instr": "Walk down the hallway and turn left. Walk down the hallway and stop at the end of the hall.",
+    "distance": 12.73,
+    "scan": "B6ByNegPMKs",
+    "path": [
+      "6bd5f24b732f481b84cd0fdd60f92c2e",
+      "e26e2cb761894264a4a34b1046701f6b",
+      "830502c684514c8897eb0cca0e19de4c",
+      "93d247206f914bf2ab5b54ef8059af14",
+      "bb2332e3d7ad40a59ee5ad0eae108dec",
+      "243350c6d7724aef90260bad99534148",
+      "993e201c128c4114a4e8ff6d74786f86"
+    ],
+    "heading": 4.892,
+    "instr_id": "3382_0",
+    "instructions": [
+      "walk forward towards the exit sign and turn left . then walk down the hall until you get to the end . stand next to the exit sign .",
+      "walk down the hall towards the red door . when you get to the red door , turn left , and walk down the hallway . keep walking down the hallway , passing numerous doors on your left . at the end of the hallway , stop in the corridor , in front of the office that ' s directly in front of you .",
+      "walk straight towards the \" exit \" sign and turn left . walk straight down the hallway and stop in front of the column near the end ."
+    ],
+    "generated_instr_sum_log_prob": -9.595941529842406,
+    "generated_instr_avg_log_prob": -0.21808958022369104,
+    "path_id": "3382",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1437": {
+    "generated_instr": "Walk out of the room and turn right. Walk into the room and turn right. Walk into the room and stop in the doorway.",
+    "distance": 9.12,
+    "scan": "r47D5H71a5s",
+    "path": [
+      "4ed50a2f86384de599f06df862d17b10",
+      "e6e19fd376c544b58035a32bd44ed8d4",
+      "6ea742331ac84fb9ae24a1b8d76bcf8a",
+      "e14074a6c7e0450492bf4c0a6c431357",
+      "49d8e71cc67d45f9863ca6d25a61a2fa",
+      "cc94b5dda437408a9a166fcdbafa2a48"
+    ],
+    "heading": 5.115,
+    "instr_id": "6247_0",
+    "instructions": [
+      "turn around and go passed the doorway on the right . go to the second door and turn right then go all the way back to the bathroom .",
+      "walk forward , enter the last door on the right side , move toward the door on the right , enter the room an wait at the door .",
+      "exit the room then turn right on the second door . go straight into the door in the middle and wait by the table ."
+    ],
+    "generated_instr_sum_log_prob": -11.342629396182275,
+    "generated_instr_avg_log_prob": -0.24133254034430374,
+    "path_id": "6247",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1438": {
+    "generated_instr": "Walk outside and turn right. Walk straight and stop by the pool.",
+    "distance": 11.99,
+    "scan": "VFuaQ6m2Qom",
+    "path": [
+      "34f75b755f7d498399a2edfe9fa67faf",
+      "e9660b3808844e42983bfe348a6c1916",
+      "69141978abaf487fb2c072c0777b4329",
+      "900464c036ff4986a9bcec42a95e4b5d",
+      "beb3568bb9034fc9bbc1a63e63c45ad4",
+      "9d9c29287e4849b99c4b3472163ecee2"
+    ],
+    "heading": 0.055,
+    "instr_id": "5384_0",
+    "instructions": [
+      "walk across patio , stop at hanging basket chair .",
+      "walk past the concrete fire pit with ceramic pots on top . continue down the porch area past the first sofa and continue past the next set of sofas . continue down the porch and walk past the potted plants towards the lighted sitting area ahead .",
+      "turn right and walk across the patio area past the sofas keeping the house to your right . wait just before the entrance to the house on the right ."
+    ],
+    "generated_instr_sum_log_prob": -8.390032131225283,
+    "generated_instr_avg_log_prob": -0.19068254843693824,
+    "path_id": "5384",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1439": {
+    "generated_instr": "Walk out of the bedroom and turn right. Walk into the hallway and turn left. Stop just inside the double doors.",
+    "distance": 6.24,
+    "scan": "mJXqzFtmKg4",
+    "path": [
+      "7478c47d6145458d80f89cee31d70fdf",
+      "b18be3157a6f4b9c8df154f8f310099d",
+      "929158cc8c424c099a601a36e0fc2270",
+      "328ef7c3d2ed4da7a2e2af2f27735c10",
+      "432b3b9f281243a1bed28ff4877bc7e7"
+    ],
+    "heading": 3.262,
+    "instr_id": "2780_0",
+    "instructions": [
+      "enter the room go out the door on the right turn left and wait right at the living room entrance .",
+      "walk forward in the room , make a right out the door , and then a sharp left turn followed by another right turn , stopping at the doorway .",
+      "enter the bedroom and continue to the double doors on the right . take the way to the left and wait at the first arch ."
+    ],
+    "generated_instr_sum_log_prob": -9.976582463714607,
+    "generated_instr_avg_log_prob": -0.2122677119939278,
+    "path_id": "2780",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1440": {
+    "generated_instr": "Exit the bathroom and walk past the bed. Walk down the stairs and wait on the landing by the banister.",
+    "distance": 9.9,
+    "scan": "Pm6F8kyY3z2",
+    "path": [
+      "dfed00b301f246989ff408657e39e88b",
+      "87e7b6f2006541a9abe57fba18294a0c",
+      "8078fc4f547a4a9cb1a6bb036cc18dc9",
+      "cb070d66db084a79b553310df69ed31d",
+      "b8f49ffb1486488bbb72693578c17865",
+      "094836afff5e4fbfbb6659a96ec665b8",
+      "981311e64aec4d3f8e403f349363e065"
+    ],
+    "heading": 0.462,
+    "instr_id": "4599_0",
+    "instructions": [
+      "turn around and exit out the door in the right corner . enter the next room and walk straight ahead towards the outdoor area . stop once you pass the columns and are in the middle facing all the chairs looking outside .",
+      "from bathroom , enter bedroom and walk straight across down two steps , wait at loungers .",
+      "leave the bathroom , and enter the bedroom . go down the stairs and onto the patio . stop at the bottom of the stairs ."
+    ],
+    "generated_instr_sum_log_prob": -14.04096929097642,
+    "generated_instr_avg_log_prob": -0.3191129384312823,
+    "path_id": "4599",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1441": {
+    "generated_instr": "Walk past the stairs and into the hallway. Walk through the open door on the other side of the room and stop in the doorway.",
+    "distance": 10.11,
+    "scan": "r47D5H71a5s",
+    "path": [
+      "d950fc211fc745d9a8e2080f6ce747d2",
+      "dddeccce9b044629a9ffd5c61e8ea1cf",
+      "498ad4add3424a4eaf28355ded64c622",
+      "e4a808c94c004bc7b2e3101c316bb02c",
+      "ae2a7dc3c3e545b98e2fcb374de658d1",
+      "f45d421d04e34220b2aaf9246b6dcdd1"
+    ],
+    "heading": 1.777,
+    "instr_id": "3107_0",
+    "instructions": [
+      "walk away from the pool , past the elevators , past the stairs and straight through the doorway to the left of the wicker chair , walk through the doorway straight ahead to the right .",
+      "turn 180 degrees and walk down the hall . walk past the stairs and keep going through the doorway . move to the right and walk through the right doorway . wait inside the door .",
+      "walk past the elevators towards the stairs , th , en past the stairs and through the door going slightly to the right . then take the doorway again slightly to the right and go a little ways into the hall and wait ."
+    ],
+    "generated_instr_sum_log_prob": -14.376467543072323,
+    "generated_instr_avg_log_prob": -0.30588228815047497,
+    "path_id": "3107",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1442": {
+    "generated_instr": "Walk through the front door and into the house. Walk down the stairs and stop in the doorway.",
+    "distance": 12.19,
+    "scan": "e9zR4mvMWw7",
+    "path": [
+      "8873cf91acfb4cea84c2712da67aa7c0",
+      "605d6ec9bcd343dc807580d204196b89",
+      "766b9e9f37944c659b55a336b4db3ec5",
+      "ab94f4d54596413fb89e01ec9b2fff65",
+      "16eb46a968384060821cb59d0e04f4dd",
+      "d08f0e14da3b4d1bbc760d73b3c3ebea"
+    ],
+    "heading": 4.696,
+    "instr_id": "7245_0",
+    "instructions": [
+      "walk into the building and turn right . walk into the garage and stop .",
+      "turn around and enter the house . turn right into the garage and wait there please .",
+      "head indoors and promptly turn right . stop near the shelf ."
+    ],
+    "generated_instr_sum_log_prob": -12.344533574069274,
+    "generated_instr_avg_log_prob": -0.2626496505121122,
+    "path_id": "7245",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1443": {
+    "generated_instr": "Walk through the laundry room and turn right. Walk through the kitchen and turn left. Walk through the kitchen and stop in front of the stairs.",
+    "distance": 12.36,
+    "scan": "S9hNv5qa7GM",
+    "path": [
+      "947f02de64db4ccbbe220a9f9124a815",
+      "1e597325e01d4a9aa332e92abc455414",
+      "46631317e8684d3f98f0b9c7d3c51417",
+      "58550e7b86724a80a38b78e1ea62af7b",
+      "19c6928f8cc64d7aa2d18a48e3b4ee21",
+      "8f5a767771964a56b3708d5415c446b2",
+      "32fb55017460457cbe0b8d1790a54786"
+    ],
+    "heading": 4.234,
+    "instr_id": "4357_0",
+    "instructions": [
+      "exit the room using the door on the right . turn left and go through the kitchen . go past the table and chairs and wait near the stairs on the right .",
+      "keep walking forward and turn right to exit . enter the kitchen , and keep walking forward passing the small corner table with four chairs on the right . enter the corner where the staircase is visible , and stop in front of the stairs .",
+      "leave the laundry room , and take a right . enter the kitchen and go left . leave the kitchen , and enter the tv room on the left . stop at the bottom of the stairs ."
+    ],
+    "generated_instr_sum_log_prob": -13.923840906704044,
+    "generated_instr_avg_log_prob": -0.3164509296978192,
+    "path_id": "4357",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1444": {
+    "generated_instr": "Walk past the painting and turn right. Walk down the hallway and stop in front of the desk.",
+    "distance": 8.08,
+    "scan": "5LpN3gDmAk7",
+    "path": [
+      "f636b5c9907d4977849eea19746caf67",
+      "f3c8df634cca40529a3072200d6820d4",
+      "96c65da51f1a47f6b9ffa425b607b6b2",
+      "f17490100cc04fd5876957a00a6237b1",
+      "0f3465d1a89e446281cb6c39c2c63cb2",
+      "69da3742bce54199a1f2a49ecabf8618"
+    ],
+    "heading": 4.582,
+    "instr_id": "6044_0",
+    "instructions": [
+      "exit the room to the left of the statue . turn right into the first door on the right . go straight and walk into the sitting area and stop near the rug on the floor .",
+      "walk through the walkway to the left of the wired man , and take you first right into a room . walk into the room , and stop once you reach the gray carpet lying on the ground .",
+      "go into the hallway and to the right . wait in the office , in front of the loveseat ."
+    ],
+    "generated_instr_sum_log_prob": -11.141607285361175,
+    "generated_instr_avg_log_prob": -0.23705547415662076,
+    "path_id": "6044",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1445": {
+    "generated_instr": "Exit the closet and turn right. Walk down the hallway and turn left. Wait in the bedroom at the end of the hall.",
+    "distance": 5.84,
+    "scan": "i5noydFURQK",
+    "path": [
+      "3560fdb7b97c462ab565c8946b77ecef",
+      "5f1b89f0e0f341849fcdab381165cd26",
+      "1e61d22315c945378096f3055645d9e1",
+      "4385dfc7f81c413b86bb06658c1ff5c7",
+      "91c5afdf381d439380d3ca8d6eb27b03"
+    ],
+    "heading": 6.225,
+    "instr_id": "6424_0",
+    "instructions": [
+      "walk out of the closet and turn right . turn left and walk into the hallway . turn right into the bedroom doorway and stop .",
+      "go to the right and continue down the hallway . turn left and then stop in the room with the green and white bed .",
+      "take a right as you walk through the doorway into the bedroom with the yellow picture on the wall . walk down the hallway a couple of steps , and take your first left through the doorway . walk into the room to the immediatly left the of the bathroom and stop ."
+    ],
+    "generated_instr_sum_log_prob": -9.84261440527196,
+    "generated_instr_avg_log_prob": -0.30758170016474873,
+    "path_id": "6424",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1446": {
+    "generated_instr": "Go up the stairs and take a left. Go down the hallway and enter the bathroom on the right. Stop in front of the first sink.",
+    "distance": 12.52,
+    "scan": "JF19kD82Mey",
+    "path": [
+      "96490c4da78240058d1f76a07ed95c9d",
+      "68e4c4477aa442cbbb9a9f1e54b9b831",
+      "f1b191033043441987b8ebf1bb55002c",
+      "c20f944e9c434804944b0c1251247202",
+      "595ef74c51bb4448ae709297121d4c10",
+      "e4a543521c44412e8f264d083ac5fc0c",
+      "e3cf525579a04ab4b6a5cf3ea40f58f9"
+    ],
+    "heading": 5.418,
+    "instr_id": "1140_0",
+    "instructions": [
+      "walk up stairs . walk past art piece . make right before laundry room . wait at glass bathroom door .",
+      "go up the stairs . turn left and go down the hallway and through the doorway to the white bedroom .",
+      "walk up the stairs , walk down the hall to the laundry room doorway , turn right , enter the bedroom , wait at the door to the bathroom ."
+    ],
+    "generated_instr_sum_log_prob": -10.64631902604566,
+    "generated_instr_avg_log_prob": -0.3041805436013046,
+    "path_id": "1140",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1447": {
+    "generated_instr": "Walk straight down the walkway and stop next to the first chair on the left.",
+    "distance": 8.41,
+    "scan": "ac26ZMwG7aT",
+    "path": [
+      "df0a72ccf976435198872ff9b19bcfb5",
+      "94454c1b315a44d196fe92f48ee83804",
+      "227c77269560472f97ae557eee7fb8c0",
+      "54db65dba94741f0875f24c433a6f12d",
+      "d16d14bd9d194980b5339c4029bc4a54"
+    ],
+    "heading": 0.911,
+    "instr_id": "1358_0",
+    "instructions": [
+      "walk along the patio towards the couch . stop next to the table that is in front of the couch .",
+      "walk straight down porch . stop at table .",
+      "go straight behind the rocking chairs , stop by the round table outside ."
+    ],
+    "generated_instr_sum_log_prob": -10.957505717175465,
+    "generated_instr_avg_log_prob": -0.24903422084489693,
+    "path_id": "1358",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1448": {
+    "generated_instr": "Walk straight across the room and wait in the doorway.",
+    "distance": 13.33,
+    "scan": "E9uDoFAP3SH",
+    "path": [
+      "611214ad029a4d4da4b45ebb8a257b3d",
+      "36ba7aeeb72e40d69e3e1c775e4bf541",
+      "9d33a07061f54a5eb58588a5bc9f10da",
+      "b409b06f51b843e3948e146f9e7d7526",
+      "49460faf784e4d93a41569491260bc9c"
+    ],
+    "heading": 5.6,
+    "instr_id": "5725_0",
+    "instructions": [
+      "go straight until you get to three windows . wait in the window farthest to the left .",
+      "walk down the room on the left side . stop in front of the big windows on the left looking out onto some marble columns outside .",
+      "walk across the room and wait by the window on the left ."
+    ],
+    "generated_instr_sum_log_prob": -7.41521686548397,
+    "generated_instr_avg_log_prob": -0.21809461369070499,
+    "path_id": "5725",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1449": {
+    "generated_instr": "Walk past the couch and up the stairs. Walk into the room at the top of the stairs and stop in the doorway.",
+    "distance": 7.18,
+    "scan": "cV4RVeZvu5T",
+    "path": [
+      "519b19d242994285bd99db910f4717f6",
+      "c29e99f090194613b5b11af906c47dab",
+      "7743b72f7c3d40749363873307eef9c9",
+      "7cd02069ac1546319b95be27fc04d7b5",
+      "20a224daa51e4890a3a954239da2f1c4"
+    ],
+    "heading": 2.226,
+    "instr_id": "776_0",
+    "instructions": [
+      "walk past the seat with a tapestry cover . turn right and walk up the grey painted stairs . walk straight ahead to the living area and wait in the middle of the room .",
+      "walk forward towards the bench . at the bench take a right and head up the first part of the stairs . at the landing go straight into the living room . in the living room stop behind the left leather chair far enough back that you are parallel with the light switch on your left .",
+      "go down steps , turn right , and go up steps , stop by chairs ."
+    ],
+    "generated_instr_sum_log_prob": -11.313869600504688,
+    "generated_instr_avg_log_prob": -0.2407206297979721,
+    "path_id": "776",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1450": {
+    "generated_instr": "Walk up the stairs and wait at the top of the stairs.",
+    "distance": 11.67,
+    "scan": "aayBHfsNo7d",
+    "path": [
+      "cfb1d3bfd87d4e87a115ad9553e7a0df",
+      "07828abd68f54c2ba9ede7aa649932df",
+      "01b9f3583d5e45739e01e0b3cfe21c09",
+      "fc188c1c407146ce88db33e41d932cae",
+      "ff3ed1ef732845839881115ed38d331f",
+      "c396a23da8b240d2a0bfcb1cd909abfc"
+    ],
+    "heading": 4.771,
+    "instr_id": "3245_0",
+    "instructions": [
+      "turn left and walk toward the stairs . walk up the stairs and stop at the top of the stairs .",
+      "walk up the stairs and stop once you get to the top .",
+      "go straight and up the stairs to your right and stop at the top ."
+    ],
+    "generated_instr_sum_log_prob": -4.236977992646999,
+    "generated_instr_avg_log_prob": -0.10864046134992304,
+    "path_id": "3245",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1451": {
+    "generated_instr": "Exit the laundry room and turn left. Walk down the hallway and enter the room on the right. Wait in the office at the end of the hall.",
+    "distance": 7.32,
+    "scan": "i5noydFURQK",
+    "path": [
+      "41f833ed92c0489bb85a911668189278",
+      "5062afb29ed34159a1e05c60e6cf6585",
+      "1e61d22315c945378096f3055645d9e1",
+      "4385dfc7f81c413b86bb06658c1ff5c7",
+      "533a4cd1505a486fa8801bb3aa38f2e3",
+      "c657ac66dec0483683d0d6356992b868"
+    ],
+    "heading": 3.078,
+    "instr_id": "6801_0",
+    "instructions": [
+      "exit the laundry room . turn left and take the first right . go forward and stop near the green chair .",
+      "exit the laundry room and turn left . walk down the hall , pass the cupboards , and pass the bedroom . go to the room at the end of the hall and stop .",
+      "exit the laundry room into the hallway and turn left . take the next right and continue walking until stopping at the doorway straight ahead ."
+    ],
+    "generated_instr_sum_log_prob": -11.61490636827341,
+    "generated_instr_avg_log_prob": -0.29037265920683525,
+    "path_id": "6801",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1452": {
+    "generated_instr": "Go down the stairs and take a right. Walk straight and enter the bathroom. Stop in front of the sink.",
+    "distance": 11.05,
+    "scan": "5q7pvUzZiYa",
+    "path": [
+      "6127ee658ce64bf48765bf59bbead503",
+      "ed79b51efdac434cb12bcd3d5e7fd112",
+      "82e8acfab99d4441ac4da5bf22c2642d",
+      "8836420cacbe4c37a57a8f8645da320b",
+      "041c71a6b7364371892021424389107a",
+      "19e0d074a48044949855917a5bff42ad",
+      "8c29de2e66404a1faf0d953ae8bb67cf"
+    ],
+    "heading": 3.87,
+    "instr_id": "656_0",
+    "instructions": [
+      "go downstairs and through the doorway slightly to the left . wait in the bathroom on the left .",
+      "go down the stairs then straight through a doorway . turn left and enter the bathroom and wait .",
+      "you ' ll go down the stairs and straight away into the bathroom . you ' ll see a shower . you need to stop and wait right when you get into the bathroom ."
+    ],
+    "generated_instr_sum_log_prob": -8.305926699862354,
+    "generated_instr_avg_log_prob": -0.18877106136050806,
+    "path_id": "656",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1453": {
+    "generated_instr": "Walk past the pool and wait in the doorway to the house.",
+    "distance": 9.07,
+    "scan": "1LXtFkjw3qL",
+    "path": [
+      "3bbffb39570649958d7147a0099ccb48",
+      "c3fe2f1211cf4bce8458006b7f174010",
+      "3aba2bf1310e4a10918e4a5bc51d1979",
+      "59d2f40b1fbf4784b2b661f05a439fad",
+      "03a8325e3b054e3fad7e1e7091f9d283"
+    ],
+    "heading": 0.287,
+    "instr_id": "2034_0",
+    "instructions": [
+      "turn so the stairs near you are towards your back . move forward past the table on your left , then go through the sliding glass door that ' s ahead of your and towards the left . wait to the right of the sliding glass door after you ' ve entered the building .",
+      "walk away from the stairs , past the table and turn left before the chairs . enter the house , and walk to the right of the purple wall and stop .",
+      "after you go up the stairs pass the table and the first door then turn left then enter the second door and wait by the desk ."
+    ],
+    "generated_instr_sum_log_prob": -9.291490806216089,
+    "generated_instr_avg_log_prob": -0.23228727015540224,
+    "path_id": "2034",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1454": {
+    "generated_instr": "Exit the bedroom and turn right. Walk through the doorway and turn left. Walk into the bedroom and stop.",
+    "distance": 8.54,
+    "scan": "b8cTxDM8gDG",
+    "path": [
+      "031a6316a244425c8c9a7a43ab6de08d",
+      "ddc9afa8e031453abd45c783fbfeb4aa",
+      "78485dd696e24574a37f81dea58c5f4f",
+      "3892d409b66644439f5afcf3d296efbf",
+      "9affa8b685294bf1b15cc7538b035088"
+    ],
+    "heading": 1.585,
+    "instr_id": "5291_0",
+    "instructions": [
+      "exit the room with the door on the right . in the hall , turn left and then turn right at the plant . stop in the doorway .",
+      "walk past the television and out of the bedroom . walk left down the hallway and stop in the entryway .",
+      "walk across the bedroom and out the single door to the right . once out , turn left and walk down the hallway to the end . enter the last door on the left and stop in the doorway ."
+    ],
+    "generated_instr_sum_log_prob": -14.012284112628834,
+    "generated_instr_avg_log_prob": -0.31846100255974624,
+    "path_id": "5291",
+    "model": "speaker-clip-t5_greedy"
+  },
+  "1455": {
+    "generated_instr": "Go up the stairs and take a left. Go up the stairs and enter the room on the left. Stop in the doorway to the room with the fireplace.",
+    "distance": 6.78,
+    "scan": "cV4RVeZvu5T",
+    "path": [
+      "7d708a5b80ee45979870bae83b2bdd44",
+      "c29e99f090194613b5b11af906c47dab",
+      "7743b72f7c3d40749363873307eef9c9",
+      "7cd02069ac1546319b95be27fc04d7b5",
+      "20a224daa51e4890a3a954239da2f1c4"
+    ],
+    "heading": 6.21,
+    "instr_id": "7300_0",
+    "instructions": [
+      "go up the steps . turn left and go up more steps until you get to a grey door . go straight into the room and stand near the black chairs .",
+      "walk up the stairs . turn left and walk up the first set of stairs . enter the living area and wait there .",
+      "walk forward up stairs . turn hard left . walk up the second set of stairs . at top , walk forward towards the fireplace . stop halfway between the doorway and the black chairs in front of the fireplace ."
+    ],
+    "generated_instr_sum_log_prob": -13.345289965494885,
+    "generated_instr_avg_log_prob": -0.3812939990141396,
+    "path_id": "7300",
+    "model": "speaker-clip-t5_greedy"
+  }
+}
