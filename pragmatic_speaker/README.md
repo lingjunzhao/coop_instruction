@@ -41,6 +41,6 @@ run/pi_voting_sample.sh
 
 If you want to train a EncDec-Transformer Base Speaker from scratch (not neccesary), run the following script:
 ```
-train_speaker_t5_vit.sh
+run/train_speaker_t5_vit.sh
 
 ```
