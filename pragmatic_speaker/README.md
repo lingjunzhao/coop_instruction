@@ -5,6 +5,8 @@ The following steps install Matterport Environment for grounded instruction gene
 
 Clone this repo. Follow the steps [here](https://github.com/clip-vil/CLIP-ViL/tree/master/CLIP-ViL-VLN) to install the simulator environments. Follow the steps to download Pre-Computed Image Features (CLIP ViT and CLIP-Res50x4), and put under `img_features/`.
 
+Download `connectivity` directory, and put in this repo.
+
 
 
 ## Decode candidate instructions
