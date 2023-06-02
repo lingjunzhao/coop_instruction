@@ -1,0 +1,446 @@
+import torch
+import numpy as np
+from param import args
+import os
+import sys
+import utils
+import model
+import torch.nn.functional as F
+from transformers import get_linear_schedule_with_warmup
+
+
+class SpeakerT5():
+    env_actions = {
+        'left': (0,-1, 0), # left
+        'right': (0, 1, 0), # right
+        'up': (0, 0, 1), # up
+        'down': (0, 0,-1), # down
+        'forward': (1, 0, 0), # forward
+        '<end>': (0, 0, 0), # <end>
+        '<start>': (0, 0, 0), # <start>
+        '<ignore>': (0, 0, 0)  # <ignore>
+    }
+
+    def __init__(self, env, listener, tok, model_name):
+        self.env = env
+        self.feature_size = self.env.feature_size
+        self.tok = tok
+        self.tok.finalize()
+        self.listener = listener
+
+        # Model
+        print("VOCAB_SIZE", self.tok.vocab_size())
+        if model_name == "t5":
+            self.model = model.SpeakerT5(self.feature_size+args.angle_feat_size, args.rnn_dim,
+                                         args.dropout, args.transformer_dropout, args.num_transformer_layers, bidirectional=args.bidir).cuda()
+        elif model_name == "t5_attention":
+            self.model = model.SpeakerT5Attention(self.feature_size + args.angle_feat_size, args.rnn_dim, args.dropout,
+                                                  args.transformer_dropout, args.num_transformer_layers, bidirectional=args.bidir).cuda()
+        else:
+            sys.exit("Unknown model: {}".format(model_name))
+        if args.optim == 'adafactor':
+            self.optimizer = args.optimizer(self.model.parameters(), scale_parameter=False, relative_step=False, warmup_init=False, lr=args.lr)
+        else:
+            self.optimizer = args.optimizer(self.model.parameters(), lr=args.lr)
+        #self.encoder = model.SpeakerEncoder(self.feature_size+args.angle_feat_size, args.rnn_dim, args.dropout, bidirectional=args.bidir).cuda()
+        #self.decoder = model.SpeakerDecoder(self.tok.vocab_size(), args.wemb, self.tok.word_to_index['<PAD>'],
+        #                                    args.rnn_dim, args.dropout).cuda()
+        #self.encoder_optimizer = args.optimizer(self.encoder.parameters(), lr=args.lr)
+        #self.decoder_optimizer = args.optimizer(self.decoder.parameters(), lr=args.lr)
+
+        # Evaluation
+        self.softmax_loss = torch.nn.CrossEntropyLoss(ignore_index=self.model.tokenizer.pad_token_id)
+
+        # Will be used in beam search
+        self.nonreduced_softmax_loss = torch.nn.CrossEntropyLoss(
+            ignore_index=self.model.tokenizer.pad_token_id,
+            size_average=False,
+            reduce=False
+        )
+
+        self.sum_softmax_loss = torch.nn.CrossEntropyLoss(
+            ignore_index=self.model.tokenizer.pad_token_id,
+            reduction='sum'
+        )
+
+        #self.scheduler = get_linear_schedule_with_warmup(
+        #    self.optimizer, num_warmup_steps=200, num_training_steps=160000
+        #)
+
+    def train(self, iters):
+        for i in range(iters):
+            self.env.reset()
+
+            self.optimizer.zero_grad()
+            self.model.zero_grad()
+
+            loss = self.teacher_forcing(train=True)
+
+            loss.backward()
+            # torch.nn.utils.clip_grad_norm(self.model.parameters(), 40.)
+            self.optimizer.step()
+            # self.scheduler.step()
+
+    def get_insts(self, wrapper=(lambda x: x), sampling=False, decode_temp=1.0, decode_top_p=1.0):
+        # Get the caption for all the data
+        self.env.reset_epoch(shuffle=True)
+        path2inst = {}
+        path2log_prob = {}
+        total = self.env.size()
+        for _ in wrapper(range(total // self.env.batch_size)):  # Guarantee that all the data are processed
+            obs = self.env.reset()
+            insts, log_probs = self.infer_batch(sampling=sampling, decode_temp=decode_temp, decode_top_p=decode_top_p)  # Get the insts of the result
+            #log_probs = torch.transpose(torch.tensor(log_probs), 0, 1)
+            #print("instrs len: ", len(insts))
+            #print("log probs size: ", log_probs.size())
+            path_ids = [ob['path_id'] for ob in obs]  # Gather the path ids
+            #print("path_ids len: {}\n".format(len(path_ids)))
+            for path_id, inst, log_prob in zip(path_ids, insts, log_probs):
+                if path_id not in path2inst:
+                    path2inst[path_id] = inst
+                    # path2log_prob[path_id] = log_prob.tolist()
+                    if type(log_prob) is not list:
+                        log_prob = log_prob.tolist()
+                    path2log_prob[path_id] = log_prob
+        return path2inst, path2log_prob
+
+    def get_instrs_probs(self, wrapper=(lambda x: x)):
+        # Get the caption for all the data
+        self.env.reset_epoch(shuffle=True)
+        instr2prob = {}
+        total = self.env.size()
+        for _ in wrapper(range(total // self.env.batch_size)):  # Guarantee that all the data are processed
+            obs = self.env.reset()
+            loss, word_accu, sent_accu = self.teacher_forcing(train=False)
+            instr_ids = [ob['instr_id'] for ob in obs]  # Gather the path ids
+            prob = np.exp(-1.0 * loss)
+            instr2prob[instr_ids[0]] = prob
+            # print("Instr id: {}".format(instr_ids[0]))
+            # print("Instr: ", obs[0]['instructions'])
+            # print("loss, word_accu, sent_accu: {} {} {}".format(loss, word_accu, sent_accu))
+            # print("Original prob: {}".format(prob))
+        return instr2prob
+
+    def get_instrs_word_probs(self, wrapper=(lambda x: x), *aargs, **kwargs):
+        # Get the caption for all the data
+        self.env.reset_epoch(shuffle=True)
+        instr2prob_list = {}
+        instr2marginal_prob_list = {}
+        instr2word_prob_lm_ratio = {}
+        total = self.env.size()
+        for _ in wrapper(range(total // self.env.batch_size + 1)):  # Guarantee that all the data are processed
+            obs = self.env.reset()
+            batch_word_prob_list, batch_marginal_word_prob_list, batch_word_prob_lm_ratio_list = self.decode_word_probs()
+            instr_ids = [ob['instr_id'] for ob in obs]  # Gather the path ids
+            #prob = np.exp(-1.0 * loss)
+            for instr_id, word_prob_list, marginal_word_prob_list, word_prob_lm_ratio_list  in zip(instr_ids, batch_word_prob_list, batch_marginal_word_prob_list, batch_word_prob_lm_ratio_list):
+                instr2prob_list[instr_id] = word_prob_list
+                instr2marginal_prob_list[instr_id] = marginal_word_prob_list
+                instr2word_prob_lm_ratio[instr_id] = word_prob_lm_ratio_list
+            # print("Instr id: {}".format(instr_ids[0]))
+            # print("Instr: ", obs[0]['instructions'])
+            # print("loss, word_accu, sent_accu: {} {} {}".format(loss, word_accu, sent_accu))
+            # print("Original prob: {}".format(prob))
+        return instr2prob_list, instr2marginal_prob_list, instr2word_prob_lm_ratio
+
+    def valid(self, sampling=False, decode_temp=1.0, decode_top_p=1.0, *aargs, **kwargs):
+        """
+
+        :param iters:
+        :return: path2inst: path_id --> inst (the number from <bos> to <eos>)
+                 loss: The XE loss
+                 word_accu: per word accuracy
+                 sent_accu: per sent accuracy
+        """
+        path2inst, path2log_prob = self.get_insts(*aargs, **kwargs, sampling=sampling, decode_temp=decode_temp, decode_top_p=decode_top_p)
+        print("Number of paths evaluated: ", len(list(path2inst.keys())))
+
+        # Calculate the teacher-forcing metrics
+        self.env.reset_epoch(shuffle=True)
+        N = 1 if args.fast_train else 3     # Set the iter to 1 if the fast_train (o.w. the problem occurs)
+        metrics = np.zeros(3)
+        for i in range(N):
+            self.env.reset()
+            metrics += np.array(self.teacher_forcing(train=False))
+        metrics /= N
+
+        return (path2inst, path2log_prob, *metrics)
+
+    def make_equiv_action(self, a_t, perm_obs, perm_idx=None, traj=None):
+        def take_action(i, idx, name):
+            if type(name) is int:       # Go to the next view
+                self.env.env.sims[idx].makeAction(name, 0, 0)
+            else:                       # Adjust
+                self.env.env.sims[idx].makeAction(*self.env_actions[name])
+            state = self.env.env.sims[idx].getState()
+            if traj is not None:
+                traj[i]['path'].append((state.location.viewpointId, state.heading, state.elevation))
+        if perm_idx is None:
+            perm_idx = range(len(perm_obs))
+        for i, idx in enumerate(perm_idx):
+            action = a_t[i]
+            if action != -1:            # -1 is the <stop> action
+                select_candidate = perm_obs[i]['candidate'][action]
+                src_point = perm_obs[i]['viewIndex']
+                trg_point = select_candidate['pointId']
+                src_level = (src_point) // 12   # The point idx started from 0
+                trg_level = (trg_point) // 12
+                while src_level < trg_level:    # Tune up
+                    take_action(i, idx, 'up')
+                    src_level += 1
+                    # print("UP")
+                while src_level > trg_level:    # Tune down
+                    take_action(i, idx, 'down')
+                    src_level -= 1
+                    # print("DOWN")
+                while self.env.env.sims[idx].getState().viewIndex != trg_point:    # Turn right until the target
+                    take_action(i, idx, 'right')
+                    # print("RIGHT")
+                    # print(self.env.env.sims[idx].getState().viewIndex, trg_point)
+                assert select_candidate['viewpointId'] == \
+                       self.env.env.sims[idx].getState().navigableLocations[select_candidate['idx']].viewpointId
+                take_action(i, idx, select_candidate['idx'])
+
+    def _teacher_action(self, obs, ended, tracker=None):
+        """
+        Extract teacher actions into variable.
+        :param obs: The observation.
+        :param ended: Whether the action seq is ended
+        :return:
+        """
+        a = np.zeros(len(obs), dtype=np.int64)
+        for i, ob in enumerate(obs):
+            if ended[i]:                                            # Just ignore this index
+                a[i] = args.ignoreid
+            else:
+                for k, candidate in enumerate(ob['candidate']):
+                    if candidate['viewpointId'] == ob['teacher']:   # Next view point
+                        a[i] = k
+                        break
+                else:   # Stop here
+                    assert ob['teacher'] == ob['viewpoint']         # The teacher action should be "STAY HERE"
+                    a[i] = len(ob['candidate'])
+        return torch.from_numpy(a).cuda()
+
+    def _candidate_variable(self, obs, actions):
+        candidate_feat = np.zeros((len(obs), self.feature_size + args.angle_feat_size), dtype=np.float32)
+        for i, (ob, act) in enumerate(zip(obs, actions)):
+            if act == -1:  # Ignore or Stop --> Just use zero vector as the feature
+                pass
+            else:
+                c = ob['candidate'][act]
+                candidate_feat[i, :] = c['feature'] # Image feat
+        return torch.from_numpy(candidate_feat).cuda()
+
+    def from_shortest_path(self, viewpoints=None, get_first_feat=False):
+        """
+        :param viewpoints: [[], [], ....(batch_size)]. Only for dropout viewpoint
+        :param get_first_feat: whether output the first feat
+        :return:
+        """
+        obs = self.env._get_obs()
+        ended = np.array([False] * len(obs)) # Indices match permuation of the model, not env
+        length = np.zeros(len(obs), np.int64)
+        img_feats = []
+        can_feats = []
+        first_feat = np.zeros((len(obs), self.feature_size+args.angle_feat_size), np.float32)
+        for i, ob in enumerate(obs):
+            first_feat[i, -args.angle_feat_size:] = utils.angle_feature(ob['heading'], ob['elevation'])
+        first_feat = torch.from_numpy(first_feat).cuda()
+        while not ended.all():
+            if viewpoints is not None:
+                for i, ob in enumerate(obs):
+                    viewpoints[i].append(ob['viewpoint'])
+            img_feats.append(self.listener._feature_variable(obs))
+            teacher_action = self._teacher_action(obs, ended)
+            teacher_action = teacher_action.cpu().numpy()
+            for i, act in enumerate(teacher_action):
+                if act < 0 or act == len(obs[i]['candidate']):  # Ignore or Stop
+                    teacher_action[i] = -1                      # Stop Action
+            can_feats.append(self._candidate_variable(obs, teacher_action))
+            self.make_equiv_action(teacher_action, obs)
+            length += (1 - ended)
+            ended[:] = np.logical_or(ended, (teacher_action == -1))
+            obs = self.env._get_obs()
+        img_feats = torch.stack(img_feats, 1).contiguous()  # batch_size, max_len, 36, 2052
+        can_feats = torch.stack(can_feats, 1).contiguous()  # batch_size, max_len, 2052
+        if get_first_feat:
+            return (img_feats, can_feats, first_feat), length
+        else:
+            return (img_feats, can_feats), length
+
+    def gt_words(self, obs):
+        """
+        See "utils.Tokenizer.encode_sentence(...)" for "instr_encoding" details
+        """
+        instructions = [ob['instr_tokens'] for ob in obs]
+        # print("gt instructions: ", instructions)
+        return instructions
+
+    def teacher_forcing(self, train=True, features=None, insts=None, for_listener=False):
+        if train:
+            self.model.train()
+        else:
+            self.model.eval()
+
+        # Get Image Input & Encode
+        obs = self.env._get_obs()
+        batch_size = len(obs)
+        # Get Language Input
+        if insts is None:
+            insts = self.gt_words(obs)  # Language Feature
+
+        (img_feats, can_feats), lengths = self.from_shortest_path()      # Image Feature (from the shortest path)
+        outputs, instruction_tokens_seqs = self.model.predict(can_feats, img_feats, lengths, insts)
+        #h_t = torch.zeros(1, batch_size, args.rnn_dim).cuda()
+        #c_t = torch.zeros(1, batch_size, args.rnn_dim).cuda()
+        #ctx_mask = utils.length2mask(lengths)
+
+
+        # Decode
+        #logits, _, _ = self.decoder(insts, ctx, ctx_mask, h_t, c_t)
+        logits = outputs.logits
+        loss = outputs[0]
+
+        # Because the softmax_loss only allow dim-1 to be logit,
+        # So permute the output (batch_size, length, logit) --> (batch_size, logit, length)
+        # logits = logits.permute(0, 2, 1).contiguous()
+        # loss = self.softmax_loss(
+        #     input  = logits[:, :, :-1],         # -1 for aligning
+        #     target = instruction_tokens_seqs[:, 1:]               # "1:" to ignore the word <BOS>
+        # )
+        #
+        # if for_listener:
+        #     return self.nonreduced_softmax_loss(
+        #         input  = logits[:, :, :-1],         # -1 for aligning
+        #         target = instruction_tokens_seqs[:, 1:]               # "1:" to ignore the word <BOS>
+        #     )
+
+        if train:
+            return loss
+        else:
+            # Evaluation
+            #print("logits shape: ", logits.size())
+            reshaped_logits = logits.reshape(-1, logits.shape[-1])
+            sum_loss = self.sum_softmax_loss(reshaped_logits, instruction_tokens_seqs.flatten())
+
+            # _, predict = logits.max(dim=1)                                  # BATCH, LENGTH
+            # gt_mask = (instruction_tokens_seqs != self.model.tokenizer.pad_token_id)
+            # correct = (predict[:, :-1] == instruction_tokens_seqs[:, 1:]) * gt_mask[:, 1:]    # Not pad and equal to gt
+            # correct, gt_mask = correct.type(torch.LongTensor), gt_mask.type(torch.LongTensor)
+            # word_accu = correct.sum().item() / gt_mask[:, 1:].sum().item()     # Exclude <BOS>
+            # sent_accu = (correct.sum(dim=1) == gt_mask[:, 1:].sum(dim=1)).sum().item() / batch_size  # Exclude <BOS>
+            word_accu, sent_accu = 0.0, 0.0
+            return sum_loss.item(), word_accu, sent_accu
+
+    def decode_word_probs(self, features=None, insts=None, for_listener=False, featdropmask=None):
+        self.model.eval()
+
+        # Get Image Input & Encode
+        obs = self.env._get_obs()
+        batch_size = len(obs)
+        viewpoints_list = [list() for _ in range(batch_size)]
+
+        # Get Language Input
+        if insts is None:
+            insts = self.gt_words(obs)  # Language Feature
+
+        # Get feature
+        (img_feats, can_feats), lengths = self.from_shortest_path(viewpoints=viewpoints_list)      # Image Feature (from the shortest path)
+
+        # This code block is only used for the featdrop.
+        if featdropmask is not None:
+            img_feats[..., :-args.angle_feat_size] *= featdropmask
+            can_feats[..., :-args.angle_feat_size] *= featdropmask
+
+        #generated_instructions, batch_log_probs = self.model.decode_greedy(can_feats, img_feats,
+        #                                                                   already_dropfeat=(featdropmask is not None))
+        #word_prob_list = generated_instructions[0]
+        #marginal_word_prob_list = word_prob_list
+        outputs, word_prob_list, marginal_word_prob_list, word_prob_lm_ratio_list = self.model.compute_word_probs(can_feats, img_feats, lengths, insts,
+                                                                                         already_dropfeat=(featdropmask is not None))
+
+        # reshaped_logits = logits.reshape(-1, logits.shape[-1])
+        # sum_loss = self.sum_softmax_loss(reshaped_logits, instruction_tokens_seqs.flatten())
+
+        #probs = logits.softmax(-1)
+        #print("probs shape: ", probs.size())
+
+        return word_prob_list, marginal_word_prob_list, word_prob_lm_ratio_list
+
+    def infer_batch(self, sampling=False, train=False, featdropmask=None, decode_temp=1.0, decode_top_p=1.0):
+        """
+
+        :param sampling: if not, use argmax. else use softmax_multinomial
+        :param train: Whether in the train mode
+        :return: if sampling: return insts(np, [batch, max_len]),
+                                     log_probs(torch, requires_grad, [batch,max_len])
+                                     hiddens(torch, requires_grad, [batch, max_len, dim})
+                      And if train: the log_probs and hiddens are detached
+                 if not sampling: returns insts(np, [batch, max_len])
+        """
+        if train:
+            self.model.train()
+        else:
+            self.model.eval()
+
+        # Image Input for the Encoder
+        obs = self.env._get_obs()
+        batch_size = len(obs)
+        viewpoints_list = [list() for _ in range(batch_size)]
+
+        # Get feature
+        (img_feats, can_feats), lengths = self.from_shortest_path(viewpoints=viewpoints_list)      # Image Feature (from the shortest path)
+
+        # This code block is only used for the featdrop.
+        if featdropmask is not None:
+            img_feats[..., :-args.angle_feat_size] *= featdropmask
+            can_feats[..., :-args.angle_feat_size] *= featdropmask
+
+        if not sampling:
+            # generated_instructions, batch_log_probs = self.model.decode_batch_greedy(can_feats, img_feats, already_dropfeat=(featdropmask is not None))
+            generated_instructions, batch_log_probs = self.model.decode_greedy(can_feats, img_feats, already_dropfeat=(featdropmask is not None))
+
+        else:
+            generated_instructions, batch_log_probs = self.model.decode_batch_sampling(can_feats, img_feats,
+                                                                                     already_dropfeat=(
+                                                                                                 featdropmask is not None), temperature=decode_temp, top_p=decode_top_p)
+        # print("Generated_instructions: ", generated_instructions[:2])  # TODO: comment out
+
+        return generated_instructions, batch_log_probs      # [(b), (b), (b), ...] --> [b, l]
+
+    def save(self, epoch, path):
+        ''' Snapshot models '''
+        the_dir, _ = os.path.split(path)
+        os.makedirs(the_dir, exist_ok=True)
+        states = {}
+        def create_state(name, model, optimizer):
+            states[name] = {
+                'epoch': epoch + 1,
+                'state_dict': model.state_dict(),
+                'optimizer': optimizer.state_dict(),
+            }
+        all_tuple = [("speaker_model", self.model, self.optimizer)]
+        for param in all_tuple:
+            create_state(*param)
+        torch.save(states, path)
+
+    def load(self, path):
+        ''' Loads parameters (but not training state) '''
+        print("Load the speaker's state dict from %s" % path)
+        states = torch.load(path)
+        def recover_state(name, model, optimizer):
+            # print(name)
+            # print(list(model.state_dict().keys()))
+            # for key in list(model.state_dict().keys()):
+            #     print(key, model.state_dict()[key].size())
+            state = model.state_dict()
+            state.update(states[name]['state_dict'])
+            model.load_state_dict(state)
+            if args.loadOptim:
+                optimizer.load_state_dict(states[name]['optimizer'])
+        all_tuple = [("speaker_model", self.model, self.optimizer)]
+        for param in all_tuple:
+            recover_state(*param)
+        return states['speaker_model']['epoch'] - 1
+
