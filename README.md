@@ -3,3 +3,6 @@ In our ACL paper "[Define, Evaluate, and Improve Task-Oriented Cognitive Capabil
 NEWS (Dec 19, 2022): We release the human evaluation interface (`human_eval_interface/`).
 
 NEWS (Jun 2, 2023): We also release the pragmatic speaker codes with pretrained models (`pragmatic_speaker/`).
+
+The instructions are placed under each folder's README.md.
+
