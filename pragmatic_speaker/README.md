@@ -9,9 +9,9 @@ Download `connectivity` directory, and put in this repo.
 
 
 
-## Decode candidate instructions
+## Generate candidate instructions
 
-1. Download the pretrained speaker model (EncDec-Transformer Base Speaker) [here](https://drive.google.com/file/d/1gDL0yIgJsDSC7Y-iIgC9zmgLpKaoan7Z/view?usp=share_link). Unzip and put the directory under `snap/`
+1. Create `snap/` directory under this folder (`pragmatic_speaker/snap/`). Download the pretrained speaker model (EncDec-Transformer Base Speaker) [here](https://drive.google.com/file/d/1gDL0yIgJsDSC7Y-iIgC9zmgLpKaoan7Z/view?usp=share_link). Unzip the file and put the directory under `snap/`
 
 
 2. Run the following script to decode greedy instruction and 10 random instructions:
@@ -26,7 +26,7 @@ The generated instructions are stored as `generated_instr` in the output json fi
 
 
 
-## Equip speaker with theory-of-mind capability
+## Rerank candidate instructions using ensemble listeners 
 
 1. Download ensemble of 10 EnvDrop-CLIP listeners [here](https://drive.google.com/file/d/1TwXmeWi9FFkFXqfe7Pws1ZtyEjfU7FNZ/view?usp=share_link). Unzip and put the directories under `snap/`.
 E.g. `snap/bt_clip_listener_res50x4_rs500/`
@@ -35,6 +35,7 @@ E.g. `snap/bt_clip_listener_res50x4_rs500/`
 ```
 run/pi_voting_sample.sh
 ```
+The output file path would be printed following "Output file: ".
 
 
 ## Train base speaker from scratch

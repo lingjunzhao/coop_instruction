@@ -3,13 +3,15 @@
 set -x
 
 vote_name="10resbt"  
+
+# change dataset name and file if you want to use some other candidate instructions
 dataset_name="t5-sampled-val-seen"
 dataset_file="speaker_t5_clip_sampled_nucleus_val_seen.json"
 
 exp_dir="experiments/pi_vote-sample-${vote_name}_dataset-${dataset_name}/"
 mkdir -p $exp_dir
 
-#voting_agents=("bt_clip_listener_res50x4_rs500")
+# change voting_agents if you want to use some other listeners
 voting_agents=("bt_clip_listener_res50x4_rs500" "bt_clip_listener_res50x4_rs505" "bt_clip_listener_res50x4_rs510" "bt_clip_listener_res50x4_rs515" "bt_clip_listener_res50x4_rs600" "bt_clip_listener_res50x4_rs605" "bt_clip_listener_res50x4_rs610" "bt_clip_listener_res50x4_rs615" "bt_clip_listener_res50x4_rs620" "bt_clip_listener_res50x4_rs625")
 
 echo "Voting agents:"
