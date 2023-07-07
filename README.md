@@ -6,4 +6,4 @@ NEWS (Jun 2, 2023): We also release the pragmatic speaker codes with pretrained 
 
 The instructions are placed under each folder's README.md.
 
-![image info](pragmatic_speaker/bounded_pragmatic.pdf)
+![image info](./pragmatic_speaker/bounded_pragmatic.png)
