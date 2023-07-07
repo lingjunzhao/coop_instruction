@@ -1,7 +1,7 @@
 This repos is adapted from Google Pangea (https://github.com/google-research/pangea) to collect human annotations from generated instructions.
 
 
-### Prepare codes and data
+### Prepare code and data
 
 1. Clone this repo
 
